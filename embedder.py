@@ -16,6 +16,13 @@ _HERE = Path(__file__).resolve().parent
 KNOWLEDGE_BASE = str(_HERE / "knowledge_base")
 CHROMA_DB_PATH = str(_HERE / "chroma_db")
 
+# ONNX embedder bundle locations, anchored to this file (not the CWD) so the
+# embedder builds and loads correctly no matter which directory the profiler,
+# audit, or demo is launched from.
+ONNX_DIR = _HERE / "afro_mini_onnx"
+ONNX_INT8_DIR = _HERE / "afro_mini_onnx_int8"
+ONNX_INT8_MODEL = ONNX_INT8_DIR / "model_quantized.onnx"
+
 # Kept at 32 (not 64) so the peak ONNX hidden-state tensor stays ~25 MB
 # (32 × 512 × 384 × 4 B) rather than ~50 MB. This matters when sync is
 # triggered from within homa_rag.py while the ChromaDB client is already
@@ -56,12 +63,12 @@ class AfroXLMRMiniEmbedder:
         # fires on XLM-R tokenizers loaded via the Mistral tokenizer path.
         # It has no effect on tokenization correctness for afro-xlmr-mini.
         self.tokenizer = AutoTokenizer.from_pretrained(
-            "./afro_mini_onnx", fix_mistral_regex=True
+            str(ONNX_DIR), fix_mistral_regex=True
         )
 
         # Load the INT8 quantized weights
         self.session = ort.InferenceSession(
-            "./afro_mini_onnx_int8/model_quantized.onnx",
+            str(ONNX_INT8_MODEL),
             providers=["CPUExecutionProvider"],
         )
 
@@ -114,29 +121,28 @@ def get_embedder():
     """Return a singleton embedder instance, building the ONNX bundle if needed."""
     global _EMBEDDER_INSTANCE
     if _EMBEDDER_INSTANCE is None:
-        target_quant_file = Path("./afro_mini_onnx_int8/model_quantized.onnx")
-
-        if not target_quant_file.exists():
+        if not ONNX_INT8_MODEL.exists():
             print(
                 "Model bundle not found. Building INT8 ONNX model for Davlan/afro-xlmr-mini...")
             try:
                 # Remove any broken/incomplete export folders from previous attempts
-                if Path("./afro_mini_onnx").exists():
-                    shutil.rmtree("./afro_mini_onnx")
-                if Path("./afro_mini_onnx_int8").exists():
-                    shutil.rmtree("./afro_mini_onnx_int8")
+                if ONNX_DIR.exists():
+                    shutil.rmtree(ONNX_DIR)
+                if ONNX_INT8_DIR.exists():
+                    shutil.rmtree(ONNX_INT8_DIR)
 
                 print("Step 1/2: Exporting base PyTorch model to standard ONNX...")
                 subprocess.run(
-                    "optimum-cli export onnx --model Davlan/afro-xlmr-mini --task feature-extraction ./afro_mini_onnx",
-                    shell=True,
+                    ["optimum-cli", "export", "onnx",
+                     "--model", "Davlan/afro-xlmr-mini",
+                     "--task", "feature-extraction", str(ONNX_DIR)],
                     check=True,
                 )
 
                 print("Step 2/2: Quantizing ONNX model to INT8 (AVX2 optimized)...")
                 subprocess.run(
-                    "optimum-cli onnxruntime quantize --avx2 --onnx_model ./afro_mini_onnx -o ./afro_mini_onnx_int8",
-                    shell=True,
+                    ["optimum-cli", "onnxruntime", "quantize", "--avx2",
+                     "--onnx_model", str(ONNX_DIR), "-o", str(ONNX_INT8_DIR)],
                     check=True,
                 )
             except Exception as e:

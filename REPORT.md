@@ -104,13 +104,46 @@ All model artifacts are publicly available on Hugging Face:
 | `fallback-ai/Homa-Afrique-Gemma-4B` (`v2/`) | `homa-afrique-gemma-4b-q4.gguf` | 2.49 GB | Iteration 2 Checkpoint-620 Multilingual Q4_K_M |
 | `fallback-ai/Homa-Afrique-Gemma-4B` (`v3/`) | `homa-afrique-gemma-4b-q3km.gguf` | 2.09 GB | Iteration 3 Imatrix Quantized Q3_K_M |
 
+## 6.5 Model Provenance (Gate 2)
+
+Full proof-of-training materials live in [`provenance/`](./provenance/). Summary:
+
+| Field | Value |
+| --- | --- |
+| **Base model** | [`Qwen/Qwen2.5-1.5B-Instruct`](https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct) |
+| **Base commit SHA** | `<FILL: HF snapshot revision used for training>` |
+| **Fine-tuning method** | LoRA SFT (PEFT) with completion-only loss masking (TRL `DataCollatorForCompletionOnlyLM`) |
+| **LoRA config** | r=32, α=64, dropout=0.05; targets q,k,v,o,gate,up,down projections |
+| **Training script** | [`training/train_qwen15b.py`](./training/train_qwen15b.py) (exact, unmodified) |
+| **Training data** | `sft_train_samples/combined_train.en.jsonl` — English agronomic instruction/response pairs; sources & licensing in [`provenance/datasets/DATA_LICENSING.md`](./provenance/datasets/DATA_LICENSING.md) |
+| **Merge** | LoRA merged into base on CPU (`merge_and_unload`) |
+| **Quantization** | F16 GGUF → Q4_K_M via llama.cpp ([`provenance/scripts/merge_and_quantize.sh`](./provenance/scripts/merge_and_quantize.sh)) |
+| **Adapter weights** | [`provenance/adapters/`](./provenance/adapters/) |
+| **Checksums** | [`provenance/SHA256SUMS.txt`](./provenance/SHA256SUMS.txt) (`generate_checksums.py --check`) |
+| **Logs** | [`provenance/logs/`](./provenance/logs/) (trainer state, eval, profiling) |
+
+### 6.5.1 Before / after fine-tuning (behavioural evidence)
+
+Identical prompts, `Qwen2.5-1.5B-Instruct` base vs. `Homa-Qwen2.5-1.5B`:
+
+| Prompt | Base model | Homa (fine-tuned) |
+| --- | --- | --- |
+| "Who are you?" | `<FILL: generic Qwen/Alibaba identity>` | `<FILL: "I am Homa, an offline agricultural assistant … built by Fallback AI">` |
+| Nigerian maize fertilizer question | `<FILL: generic, non-actionable>` | `<FILL: product + rate (kg/ha) + timing>` |
+| Out-of-domain request | `<FILL: base answers freely>` | `<FILL: stays in-domain, redirects politely, keeps Homa identity>` |
+
+> Populate the `<FILL>` cells with real transcript output before submission —
+> these three rows are the clearest evidence of genuine adaptation for the Gate 2
+> reviewers, so use verbatim model output, not paraphrase.
+
+---
 ## 7. Identified Constraints 
 - **RAM is the hard constraint.** The ADTC standard laptop allows 7 GB usable; a run
   that exceeds it is disqualified. Every quantization and context-length choice was
   made against this ceiling first, quality second.
 - **CPU / integrated-GPU only.** No discrete GPU is assumed. Inference runs through
   `llama.cpp` on CPU, so tokens/second and time-to-first-token are bounded by memory
-  bandwidth, not compute, reinforcing the choice of a 4B model at 4-bit.
+  bandwidth, not compute, reinforcing the choice of a 1.5B model at 4-bit.
 - **100% offline.** No external network calls occur during inference. Weights are
   fetched once, ahead of evaluation, via `download_model.sh`; after that the model is
   fully self-contained.

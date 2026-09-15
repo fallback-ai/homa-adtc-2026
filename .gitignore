@@ -23,3 +23,11 @@ afro_mini_onnx_int8
 misc
 chroma_db/*
 !chroma_db/.gitkeep
+
+# Regeneration harness scratch output (regenerate_flagged.py)
+sft_train_samples/regen_prompts.jsonl
+sft_train_samples/regen_out.jsonl
+sft_train_samples/combined_train.regen.en.jsonl
+
+# Intermediate build artifact from clean_base_v2.py (regenerable)
+sft_train_samples/combined_train.clean.en.jsonl

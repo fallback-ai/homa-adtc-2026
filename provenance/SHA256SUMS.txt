@@ -1,0 +1,8 @@
+# SHA256 checksums of Homa model artifacts.
+# Regenerate after building/downloading the model:
+#     python provenance/generate_checksums.py
+# Verify:
+#     python provenance/generate_checksums.py --check
+#
+# Format: <sha256>  <repo-relative-path>
+# (populated at build time; empty until the GGUF / adapter are present)

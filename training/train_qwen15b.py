@@ -15,7 +15,13 @@ from peft import LoraConfig
 from trl import SFTTrainer, SFTConfig, DataCollatorForCompletionOnlyLM
 
 BASE = "Qwen/Qwen2.5-1.5B-Instruct"
-DATA = "../sft_train_samples/combined_train.en.jsonl"
+# Single merged v2 corpus: cleaned base English rows + the gold corrective set
+# (actionable answers, correct diagnoses, identity/OOD handling; gold oversampled
+# and overlapping base answers replaced). Rebuild it before training with:
+#     cd ../sft_train_samples
+#     python clean_base_v2.py                                    # hygiene pass
+#     python build_merged_v2.py --base combined_train.clean.en.jsonl
+DATA = "../sft_train_samples/combined_train.v2.en.jsonl"
 OUT = "homa-qwen15b"
 MERGED = "homa-qwen15b-merged"
 FULL_FT = False                       # 1.5B full-FT is feasible; try if LoRA underfits
