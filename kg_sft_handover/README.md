@@ -51,28 +51,21 @@ On my end, I am running **Stage 5** inside the Kaggle notebook via dual-T4 offli
 
 - **Model:** `Qwen/Qwen2.5-7B-Instruct` (fp16, `tensor_parallel_size=2`).
 - **Structured Output:** Pydantic schema enforcing `{"instruction": "...", "response": "..."}`.
-- **Diversity Injection:**
-  - **Styles:** Alternating `conversational` (natural paragraphs, no headers), `short_steps` (2–3 concise action bullets), and `comprehensive` (full markdown diagnosis & treatment).
-  - **Context:** Sampling across 21 Nigerian states (Kaduna, Kano, Benue, Oyo, Plateau, etc.) for realistic agroecological framing.
-  - **Boundary Defense (~8%):** Farmers appending off-topic inquiries (resignation letters, jollof rice recipes, betting tips) where Homa answers the agricultural query first, then politely declines the distraction.
-  - **Automated Grounding Audit:** Regex extraction of numerical claims (units like `kg/ha`, `ml/L`, `WAP`, `days`) confirming every claim exists verbatim in the grounding sentences. Flagged ungrounded claims are diverted to `stage5_flagged_for_review.jsonl`.
-  - **Bucketed Near-Duplicate Detection:** $O(N)$ pairwise check within domain/crop buckets to flag responses with $>85\%$ similarity into `stage5_near_duplicates.jsonl`.
-  - **Clean Export:** Stripping metadata to produce clean `{"instruction": ..., "response": ...}` records in `stage5_sft_pairs_clean.jsonl`.
-
-### Kaggle Code Snippet (Execution in Progress)
-```python
-# Stage 5 synthesis loop in Kaggle
-outputs = llm.generate(prompts, synth_sampling_params)
-for (p, style, is_mixed), output in zip(configs, outputs):
-    parsed = SynthesizedSFT.model_validate_json(output.outputs[0].text)
-    is_grounded, ungrounded = verify_grounding(parsed.response, p["grounding_sentences"], p)
-    if is_grounded:
-        out_main.write(json.dumps({
-            "path_key": p["path_key"],
-            "instruction": parsed.instruction,
-            "response": parsed.response
-        }) + "\n")
-```
+- **Sophisticated Diversity Engine (Anti-Repetition):**
+  - **8 Smallholder Inquiry Archetypes:**
+    1. *Visual Symptom Inquiry:* Physical signs described in field terms without technical jargon; asks for field confirmation & diagnosis.
+    2. *Emergency Outbreak:* Sudden urgent infestation/mortality; demands fast knockdown rescue chemical, rates, and PHI/withdrawal.
+    3. *Low-Cost Cultural & Organic Control:* Smallholder cash constraints; prioritizes sanitation, neem/ash, resistant seed, and threshold management.
+    4. *Dosage Calibration & Measures:* Smallholder metric/local conversions (bottle caps, matchboxes, 15L/16L/20L knapsacks) and WAP timing.
+    5. *Seasonal Planning & Agronomy:* Pre-planting guidance across Nigerian agroecological zones (Sudan, Guinea, Rainforest, Fadama).
+    6. *Postharvest Preservation & Storage:* Curing, safe moisture (<12-14%), PICS hermetic bags, aflatoxin/cyanide reduction.
+    7. *Livestock & Aquaculture Husbandry:* Balanced rations, water quality (pH, DO), ventilation, NVRI Vom vaccines (I-2), withdrawal periods.
+    8. *Adversarial Boundary Defense (~10%):* Legit agricultural question paired with realistic off-topic distractions; answers farming thoroughly first, politely deflects distraction in authentic Homa voice.
+  - **Enforced Response Actionability (`RESPONSE_STYLE.md`):** Product (concrete commercial/generic name), Rate (kg/ha, ml/L, or smallholder units), Timing (WAP / stage), Method (band placement, foliar spray wetting undersides), Safety (PPE and PHI).
+  - **Look-alike Disambiguation & Quick Field Tests:** Clarifying confusable diseases (e.g. Whitefly/TYLCV vs Aphids, Brown Spot vs Blast vs BLB) with 30-second field confirmation tests.
+  - **Automated Grounding Audit:** Regex extraction of numerical claims confirming evidence backing; ungrounded claims diverted to audit file.
+  - **Bucketed Near-Duplicate Detection:** Pairwise similarity checks within domain/crop buckets to flag responses with $>85\%$ similarity.
+  - **Clean Export & Idempotent GitHub Push (Cell 12):** Automatically stages, computes checksums, commits, and pushes clean SFT datasets into `sft_train_samples/` (`homa_kg_stage5_sophisticated_sft.jsonl`, `homa_kg_stage5_sophisticated_sft_clean.jsonl`, etc.) on branch `semifinal`.
 
 ---
 
