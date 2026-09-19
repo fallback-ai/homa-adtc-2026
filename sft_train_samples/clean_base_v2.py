@@ -115,10 +115,13 @@ def main():
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--no-reform", action="store_true",
                     help="skip fragment reformatting (step 2)")
+    ap.add_argument("--base", default=str(BASE_FILE),
+                    help="base corpus to clean (default combined_train.en.jsonl; "
+                         "point this at an augmented base to include external sources)")
     ap.add_argument("--out", default=str(OUT_FILE))
     args = ap.parse_args()
 
-    base = [json.loads(l) for l in BASE_FILE.read_text(encoding="utf-8").splitlines() if l.strip()]
+    base = [json.loads(l) for l in Path(args.base).read_text(encoding="utf-8").splitlines() if l.strip()]
 
     stats = dict(decontaminated=0, reformed=0, typo_rows=0)
     processed = []
