@@ -31,4 +31,9 @@ sft_train_samples/combined_train.regen.en.jsonl
 
 # Intermediate build artifact from clean_base_v2.py (regenerable)
 sft_train_samples/combined_train.clean.en.jsonl
-training_artifacts/
+
+# Intermediate build artifacts from build_v3.py / build_v4.py (regenerable)
+sft_train_samples/combined_train.aug.en.jsonl
+sft_train_samples/combined_train.aug.clean.en.jsonl
+sft_train_samples/combined_train.aug4.en.jsonl
+sft_train_samples/combined_train.aug4.clean.en.jsonl

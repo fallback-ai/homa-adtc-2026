@@ -15,13 +15,18 @@ from peft import LoraConfig
 from trl import SFTTrainer, SFTConfig, DataCollatorForCompletionOnlyLM
 
 BASE = "Qwen/Qwen2.5-1.5B-Instruct"
-# Single merged v2 corpus: cleaned base English rows + the gold corrective set
-# (actionable answers, correct diagnoses, identity/OOD handling; gold oversampled
-# and overlapping base answers replaced). Rebuild it before training with:
+# Single merged v4 corpus: cleaned base English rows + three external sources
+# (filtered KisanVaani QA, aggregated Nigeria planting/harvest facts, curated
+# IITA-report QA) + the gold corrective set (actionable answers, correct
+# diagnoses, identity/OOD handling; gold oversampled, overlapping base answers
+# replaced). Rebuild it with:
 #     cd ../sft_train_samples
-#     python clean_base_v2.py                                    # hygiene pass
-#     python build_merged_v2.py --base combined_train.clean.en.jsonl
-DATA = "../sft_train_samples/combined_train.v2.en.jsonl"
+#     python build_external_kisanvaani.py     # filtered KisanVaani QA (Apache-2.0)
+#     python build_external_nigeria_facts.py  # aggregated Nigeria facts (MIT)
+#     python build_external_iita.py           # curated IITA-report QA (CC-BY/-SA)
+#     python build_v4.py                       # assemble + clean + merge gold
+# (v3 was base + KisanVaani + Nigeria facts + gold; v2 was base + gold only)
+DATA = "../sft_train_samples/combined_train.v4.en.jsonl"
 OUT = "homa-qwen15b"
 MERGED = "homa-qwen15b-merged"
 FULL_FT = False                       # 1.5B full-FT is feasible; try if LoRA underfits
