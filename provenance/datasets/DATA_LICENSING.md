@@ -77,6 +77,22 @@ subset is used for fine-tuning.
   the Nigerian / West-African context.
 - **Samples:** see `provenance/datasets/samples/` for a representative excerpt.
 
+### Candidate source: Knowledge-Graph paths (not yet in the submission set)
+
+`sft_train_samples/sft_pairs_kg_claude.jsonl` (**31 pairs**) is a standalone
+candidate set, held out of `combined_train.v4.en.jsonl` pending team
+cross-audit against the Kaggle Qwen2.5-7B synthesis run (see
+`kg_sft_handover/README.md`). It is synthesized by
+`build_kg_sft_pairs.py` from the KG stage-4 decision paths
+(`kg_pipeline_checkpoints/stage4_traversed_paths.jsonl`), first curated into
+grounded evidence bundles by `build_kg_bundles.py` (221 paths → 106 usable
+bundles; author/institution/country/abstract hosts and ungrounded paths
+dropped). Every number in a response is verified to appear verbatim in the KG
+grounding sentences (build-time audit). The underlying knowledge graph was
+built over the `knowledge_base/` PDF corpus, so these pairs inherit those
+documents' licences — see the RAG corpus table below (to be completed before
+any merge into the training set).
+
 ## How the data was produced
 
 | Component | Method | Licensing / terms |
