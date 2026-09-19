@@ -37,7 +37,3 @@ sft_train_samples/combined_train.aug.en.jsonl
 sft_train_samples/combined_train.aug.clean.en.jsonl
 sft_train_samples/combined_train.aug4.en.jsonl
 sft_train_samples/combined_train.aug4.clean.en.jsonl
-training_artifacts/
-
-# Curated KG evidence bundles (regenerable from stage4 via build_kg_bundles.py)
-sft_train_samples/kg_bundles.jsonl
