@@ -37,3 +37,5 @@ sft_train_samples/combined_train.aug.en.jsonl
 sft_train_samples/combined_train.aug.clean.en.jsonl
 sft_train_samples/combined_train.aug4.en.jsonl
 sft_train_samples/combined_train.aug4.clean.en.jsonl
+
+training_artifacts/
