@@ -1,0 +1,10 @@
+{
+  "source_file": "/kaggle/working/v5_data_prep/combined_train_v4_en.jsonl",
+  "initial_total_records": 2784,
+  "exact_duplicate_instructions_removed": 201,
+  "degenerate_short_responses_removed": 2,
+  "india_kisanvaani_leakage_flagged": 4,
+  "final_clean_v5_count": 2577,
+  "final_clean_file": "/kaggle/working/v5_data_prep/combined_train_v5_clean.jsonl",
+  "final_flagged_file": "/kaggle/working/v5_data_prep/combined_train_v5_flagged_for_review.jsonl"
+}
