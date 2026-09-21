@@ -22,17 +22,17 @@ fine-tune (Gate 2: *Proof-of-Training* and *Model Provenance Disclosure*).
 
 | Path | What it is | Gate 2 requirement |
 | --- | --- | --- |
-| `adapters/` | LoRA adapter config (`adapter_config.json`) & weights on HF | Adapter weights |
-| `../training/train_sft_gate2.py` | The exact SFT training script used for Gate 2 release | Training scripts / configs |
-| `../training/train_qwen15b.py` | Standalone SFT + merge pipeline script | Training scripts / configs |
-| `../training/train_gemma1b.py` | Earlier research-track training script | Training scripts / configs |
-| `scripts/merge_and_quantize.sh` | Merge → F16 GGUF → Q4_K_M conversion pipeline | Merge / quantization scripts |
-| `logs/loss_logs.json` | Training loss / eval logs exported from the run (219 steps) | Loss / performance logs |
-| `before_after_comparison.md` | Comprehensive 12-test before/after evaluation suite | Behavioral evidence |
-| `datasets/DATA_LICENSING.md` | Dataset sources, generation method, and licensing | Datasets + licensing |
-| `datasets/samples/` | Small representative samples of the training data | Dataset samples |
-| `SHA256SUMS.txt` | SHA256 checksums of released model artifacts | SHA256 checksums |
-| `generate_checksums.py` | Regenerates `SHA256SUMS.txt` from `model/` + `adapters/` | (reproducibility helper) |
+| [`adapters/`](./adapters/README.md) | LoRA adapter specification (`adapter_config.json`) & weights on HF | Adapter weights |
+| [`../training/train_sft_gate2.py`](../training/train_sft_gate2.py) | The exact SFT training script used for Gate 2 release | Training scripts / configs |
+| [`../training/train_qwen15b.py`](../training/train_qwen15b.py) | Standalone SFT + merge pipeline script | Training scripts / configs |
+| [`../training/train_gemma1b.py`](../training/train_gemma1b.py) | Earlier research-track training script | Training scripts / configs |
+| [`scripts/merge_and_quantize.sh`](./scripts/merge_and_quantize.sh) | Merge → F16 GGUF → Q4_K_M conversion pipeline | Merge / quantization scripts |
+| [`logs/`](./logs/README.md) | Training loss / eval telemetry exported from run ([`loss_logs.json`](./logs/loss_logs.json)) | Loss / performance logs |
+| [`before_after_comparison.md`](./before_after_comparison.md) | Comprehensive 12-test before/after evaluation suite | Behavioral evidence |
+| [`datasets/DATA_LICENSING.md`](./datasets/DATA_LICENSING.md) | Dataset sources, generation method, and licensing | Datasets + licensing |
+| [`datasets/samples/`](./datasets/samples/) | Small representative samples of the training data | Dataset samples |
+| [`SHA256SUMS.txt`](./SHA256SUMS.txt) | SHA256 checksums of released model artifacts | SHA256 checksums |
+| [`generate_checksums.py`](./generate_checksums.py) | Regenerates `SHA256SUMS.txt` from `model/` + `adapters/` | (reproducibility helper) |
 
 ## How to reproduce (organizer-facing)
 
