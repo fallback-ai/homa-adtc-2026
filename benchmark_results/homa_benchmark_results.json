@@ -1,0 +1,1052 @@
+[
+  {
+    "id": 1,
+    "question": "I planted maize three weeks ago in Kaduna. We had very heavy rain for almost a week. The maize is now yellow, especially the older leaves, and parts of the field still hold water. My neighbour says I should apply urea immediately. What should I do today?",
+    "expected_answer": "Do not apply urea while the soil is waterlogged. First drain the standing water and allow air to return to the root zone. The yellowing may be caused by root stress, nitrogen loss, or both. After drainage, check whether the roots are healthy and tell me how much fertilizer you applied before we calculate any top-dressing.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.67
+  },
+  {
+    "id": 2,
+    "question": "The water has drained. I used NPK 15-15-15 at planting, and the maize is four weeks old. The lower leaves remain yellow. Is nitrogen deficiency now the most likely cause?",
+    "expected_answer": "Nitrogen deficiency is now more likely because the older leaves are affected and heavy rain may have moved nitrogen below the roots. It is still not certain, because damaged roots can produce similar symptoms. Tell me the amount of NPK used, the farm size, and whether the roots are white and firm or brown and soft before adding more nitrogen.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.77
+  },
+  {
+    "id": 3,
+    "question": "I have one acre of that maize. Exactly how much urea should I apply?",
+    "expected_answer": "I cannot calculate a safe amount from the farm size alone. I also need the target nitrogen rate and the amount of NPK already applied, because that fertilizer already supplied some nitrogen. One acre is about 0.405 hectare and urea is about 46% nitrogen; once you provide the missing figures, I can calculate the remaining urea.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.91
+  },
+  {
+    "id": 4,
+    "question": "My extension officer says the next application should supply 40 kg of nitrogen per hectare. My urea is 46% nitrogen. How much urea is that per hectare?",
+    "expected_answer": "Divide 40 kg of nitrogen by 0.46. That gives about **87 kg of urea per hectare**. This is a product conversion, not a new recommendation, so any nitrogen already supplied by other fertilizer must still be considered.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.64
+  },
+  {
+    "id": 5,
+    "question": "Using that same 40 kg nitrogen per hectare recommendation, my farm is one acre. Approximately how much urea would supply it?",
+    "expected_answer": "One acre is about 0.405 hectare, so the farm needs about 16.2 kg of nitrogen. Dividing by 0.46 gives approximately **35.2 kg of urea**. This assumes the 40 kg N/ha is the remaining dose and does not need adjustment for fertilizer already applied.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.67
+  },
+  {
+    "id": 6,
+    "question": "I applied urea this morning, and a heavy downpour came two hours later. Should I apply the same amount again tomorrow?",
+    "expected_answer": "No, do not repeat the full dose automatically. The amount lost depends on the rainfall, soil, drainage, and whether the urea entered the soil. Reapplying everything could over-fertilize the crop. Check drainage and crop condition first and seek a field-specific adjustment if possible.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.82
+  },
+  {
+    "id": 7,
+    "question": "My youngest maize leaves are the palest, while the older leaves remain green. Should I apply more urea?",
+    "expected_answer": "Not yet. Nitrogen deficiency normally appears first on older leaves, so pale young leaves may point to sulphur, iron, another micronutrient, or root-zone trouble. Please describe whether the veins remain green, the soil condition, and what fertilizer was used before deciding on urea.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.83
+  },
+  {
+    "id": 8,
+    "question": "My maize leaves are yellow between the veins, but the veins stay green. Which nutrient is missing?",
+    "expected_answer": "That pattern is called interveinal chlorosis, but it does not identify one nutrient by itself. I need to know whether it began on young or old leaves, the crop age, soil condition, and fertilizer history. Those details help distinguish magnesium, iron, zinc, root stress, and other causes.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.67
+  },
+  {
+    "id": 9,
+    "question": "I spread one 50 kg bag of NPK 15-15-15 over half a hectare. What fertilizer rate and nitrogen rate did I apply?",
+    "expected_answer": "You applied **100 kg of fertilizer product per hectare** because 50 kg divided by 0.5 hectare equals 100 kg/ha. Since the product contains 15% nitrogen, it supplied **15 kg of nitrogen per hectare**.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.67
+  },
+  {
+    "id": 10,
+    "question": "My neighbour says I should apply 120 kg nitrogen per hectare. Does that mean I should buy 120 kg of urea?",
+    "expected_answer": "No. The 120 kg refers to actual nitrogen, not urea product. If urea were the only source, 120 ÷ 0.46 would equal about **261 kg urea per hectare**, but do not use that as an application instruction until you confirm the crop recommendation, earlier fertilizer, and split schedule.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.6
+  },
+  {
+    "id": 11,
+    "question": "My tomato leaves in Kaduna are curling. Tiny white insects sit underneath and fly when I shake the plant. What is the most likely problem?",
+    "expected_answer": "The insects are very likely whiteflies. The curling may come from their feeding or from a whitefly-transmitted leaf-curl virus. Check whether new leaves are severely curled, plants are stunted, or leaves show yellowing. Controlling whiteflies can reduce further spread, but it will not cure plants already infected with a virus.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.84
+  },
+  {
+    "id": 12,
+    "question": "Those tomatoes are badly curled and stunted, but the whiteflies are gone after treatment. Can an insecticide make the plants normal again?",
+    "expected_answer": "It depends on what caused the curling. If it was only whitefly feeding damage, controlling the insects may allow healthier new leaves to grow, although existing curled leaves may not straighten. If the plants have a whitefly-transmitted virus, insecticide will reduce further spread but cannot cure infected plants, which may remain curled and stunted.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.73
+  },
+  {
+    "id": 13,
+    "question": "My tomato suddenly wilted although the soil is moist. There are no whiteflies. Is it certainly bacterial wilt?",
+    "expected_answer": "No. Bacterial wilt is possible, but Fusarium wilt, root rot, physical root damage, and waterlogging can also cause wilting in moist soil. Check the roots and lower stem for rot or vascular discoloration; a bacterial-streaming test or diagnostic service can help confirm the cause.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.56
+  },
+  {
+    "id": 14,
+    "question": "If it is bacterial wilt, should I plant next season's tomatoes 50 m, 100 m, or 500 m away?",
+    "expected_answer": "None of those distances is a universal safe rule. Risk depends more on contaminated soil, drainage water, tools, transplants, and susceptible crops than on one fixed distance. Use clean seedlings, avoid moving contaminated soil or water, sanitize tools, improve drainage, and follow a locally suitable rotation plan.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.67
+  },
+  {
+    "id": 15,
+    "question": "One tomato wilted yesterday and the neighbouring plant wilted today. Should I spray fungicide across the field?",
+    "expected_answer": "Not before identifying the cause. A foliar fungicide will not control bacterial wilt or many root and vascular problems. Inspect the roots and cut lower stems, look at the irrigation pattern, and note whether wilting follows a row, wet area, or random plants before choosing a treatment.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.83
+  },
+  {
+    "id": 16,
+    "question": "My tomato fruits are black only at the flower end, and the patch is sunken and leathery. What should I spray?",
+    "expected_answer": "This strongly resembles blossom-end rot, which is a physiological problem rather than a fungal infection. A fungicide is unlikely to help. Keep soil moisture more even, protect roots, avoid excessive nitrogen, and ensure calcium is available; damaged fruits will not recover.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.7
+  },
+  {
+    "id": 17,
+    "question": "My tomatoes were fine during a dry spell, but many fruits cracked after heavy rain. Is it a virus?",
+    "expected_answer": "A virus is unlikely from that timing alone. The fruits probably absorbed water rapidly after the dry period and expanded faster than their skins. More consistent watering, mulch, good drainage, and crack-tolerant varieties can reduce future cracking.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.91
+  },
+  {
+    "id": 18,
+    "question": "My rice in Kebbi has brown spots and is stunted. Is it rice blast—yes or no?",
+    "expected_answer": "I cannot confirm rice blast from those two symptoms. Blast, brown spot, nutrient stress, and other problems can all cause spots and poor growth. Please describe the lesion shape and centre, where they occur on the plant, how the symptoms are distributed, and the recent weather.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.69
+  },
+  {
+    "id": 19,
+    "question": "One rice field has round-to-oval brown spots. Another has spindle-shaped lesions with grey centres. Which is more suspicious for blast?",
+    "expected_answer": "The field with spindle- or diamond-shaped lesions and grey centres is more suspicious for rice blast. Round-to-oval brown lesions are more consistent with brown spot. A field inspection or diagnostic confirmation is still advisable before treatment.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.95
+  },
+  {
+    "id": 20,
+    "question": "Only the rice plants in the lowest part of my field are yellow and stunted. Should I add fertilizer there?",
+    "expected_answer": "Check drainage first. Because the problem is concentrated in the lowest area, waterlogging and root oxygen stress are more likely than a uniform fertilizer shortage. Drain the area if possible and inspect the roots before adding fertilizer to saturated soil.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.81
+  },
+  {
+    "id": 21,
+    "question": "My maize has ragged holes in the new leaves. A caterpillar and black material are inside the funnel. What is likely happening?",
+    "expected_answer": "This is strongly consistent with fall armyworm, and the black material is probably frass. Check at least several parts of the field to determine how many plants are affected and whether larvae are small or large. Those observations, crop stage, and local thresholds determine whether treatment is worthwhile.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.75
+  },
+  {
+    "id": 22,
+    "question": "I found fall armyworm on 4 plants out of 100. Which pesticide should I buy immediately?",
+    "expected_answer": "Four affected plants out of 100 does not by itself justify an immediate pesticide purchase. Check crop stage, larval size, fresh damage, and natural enemies, and compare the result with a locally valid action threshold. If treatment is justified, use only a product registered for maize and fall armyworm and follow its label.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.86
+  },
+  {
+    "id": 23,
+    "question": "I sprayed fall armyworm three days ago, but the leaves still have holes. Does that prove the insecticide failed?",
+    "expected_answer": "No. Existing holes do not disappear after treatment. Look for live larvae, fresh frass, and new feeding on leaves that emerged after spraying. Continued fresh damage is better evidence of failure than old holes.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.89
+  },
+  {
+    "id": 24,
+    "question": "A purple flowering weed grows beside my weak maize. Pulling it does not restore the maize. What is happening?",
+    "expected_answer": "The weed is likely Striga, or witchweed. It attaches to maize roots and causes damage before appearing above ground, so pulling it cannot reverse damage already done. Remove it before it produces seed and combine resistant varieties, rotation, improved soil fertility, and other local controls over several seasons.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.88
+  },
+  {
+    "id": 25,
+    "question": "Can I eliminate Striga from a badly infested field this season simply by spraying it after it flowers?",
+    "expected_answer": "No. By flowering time, Striga has already damaged the crop and may soon add more seed to the soil. Control normally requires preventing seed production and using integrated practices for several seasons to reduce the seed bank.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.75
+  },
+  {
+    "id": 26,
+    "question": "My cassava leaves are distorted with yellow-and-green mosaic patterns. Will extra fertilizer cure them?",
+    "expected_answer": "Those symptoms are consistent with cassava mosaic disease. Fertilizer may support general growth but cannot cure a viral infection. Do not use affected plants as stem sources; obtain healthy planting material and manage the insect vector and infected plants according to local guidance.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.91
+  },
+  {
+    "id": 27,
+    "question": "One cassava plant looks perfectly healthy. Is every stem cut from it guaranteed safe for planting next season?",
+    "expected_answer": "No visible symptoms make it a better candidate, but they do not provide a guarantee. Select vigorous, symptom-free mother plants from a reliable clean-stem source and continue monitoring the new field.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.79
+  },
+  {
+    "id": 28,
+    "question": "My cowpea has many black insects clustered on tender shoots and the leaves are curling. What should I check before spraying?",
+    "expected_answer": "They are likely aphids. Check how much of the field is affected, whether ladybirds or other natural enemies are present, and whether plants show virus-like symptoms. A small localized population may not require a broad-spectrum spray, which could kill beneficial insects.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.92
+  },
+  {
+    "id": 29,
+    "question": "My cowpea flowers look normal outside, but when I open some I find larvae and webbing. Later, the pods are damaged. What pest should I suspect?",
+    "expected_answer": "Maruca pod borer is a strong possibility because its larvae feed inside webbed flowers and later damage pods. Inspect flowers and pods across the field to estimate infestation, then use locally recommended integrated control and any registered product only as directed.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.86
+  },
+  {
+    "id": 30,
+    "question": "My stored beans have round holes and tiny beetles are emerging. I do not want poison in food my family will eat. What can I do?",
+    "expected_answer": "This is typical bruchid damage. Dry the beans to a safe storage moisture level and seal them in intact hermetic or PICS-type bags. Hermetic storage can suppress the insects without mixing insecticide into the food.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.68
+  },
+  {
+    "id": 31,
+    "question": "There are already live weevils inside my beans. Will putting them in a PICS bag still work?",
+    "expected_answer": "Yes, it can still work if the beans are sufficiently dry and all bag liners are intact and tightly sealed. The insects do not have to be killed first. Avoid reopening the bag frequently because that restores oxygen.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.68
+  },
+  {
+    "id": 32,
+    "question": "I open my hermetic bag every evening to remove two cups of beans. Is that good storage practice?",
+    "expected_answer": "No. Frequent opening prevents the bag from maintaining the low-oxygen environment that controls insects. Divide the beans into several smaller hermetic containers so one can be opened for daily use while the rest remain sealed.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.84
+  },
+  {
+    "id": 33,
+    "question": "A rat made a small hole in one layer of my PICS bag. Can I ignore it?",
+    "expected_answer": "No. Hermetic storage depends on an airtight barrier. Inspect all liners, repair or replace the damaged liner properly, and control the rodents; otherwise insects and moisture may continue damaging the grain.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.88
+  },
+  {
+    "id": 34,
+    "question": "Some maize in my store is mouldy and smells musty. If I sun-dry and cook it well, is it safe for my children?",
+    "expected_answer": "Do not assume it is safe. Mouldy maize may contain aflatoxin or other mycotoxins, and ordinary drying or cooking does not reliably remove them. Separate the suspect grain from sound grain and do not feed it to children or mix it into food.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.71
+  },
+  {
+    "id": 35,
+    "question": "My groundnuts look normal, but they stayed wet for several days after harvest. Does that mean aflatoxin cannot be present because I see no mould?",
+    "expected_answer": "No. Aflatoxin can be present even when mould is not visible. Delayed drying and prolonged moisture increase the risk, so the groundnuts should be properly dried, sorted, and tested where possible before food or feed use.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.91
+  },
+  {
+    "id": 36,
+    "question": "I harvested yams with a cutlass and several tubers have small cuts. Should I store them with undamaged yams?",
+    "expected_answer": "Separate the damaged tubers and use or market them first if they are otherwise sound. Cuts allow storage-rotting organisms to enter. Cure and store sound tubers in a shaded, well-ventilated place and inspect them regularly.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.81
+  },
+  {
+    "id": 37,
+    "question": "Heavy rain is likely tonight. Should I double the pesticide dose this afternoon so some remains after the rain?",
+    "expected_answer": "No. Never exceed the label dose to compensate for rain. Check the product's required rain-free or rain-fast period and postpone spraying if there is not enough time before the rain.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.93
+  },
+  {
+    "id": 38,
+    "question": "The label says 40 mL per 20 L of water. My knapsack holds 15 L. How much product goes in a full tank?",
+    "expected_answer": "Use **30 mL** in a 15 L tank because 40 × 15 ÷ 20 = 30. This calculation applies only if that label direction is for your crop and target pest.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.84
+  },
+  {
+    "id": 39,
+    "question": "I put one bottle of pesticide in each tank. Am I using too much?",
+    "expected_answer": "I cannot tell yet. Please give me the bottle volume, tank capacity, full product name and concentration, crop, target pest, and label rate. “One bottle per tank” is not a safe or meaningful dose without those details.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.92
+  },
+  {
+    "id": 40,
+    "question": "I sprayed a pesticide yesterday and want to harvest the vegetables tomorrow. The insects are dead. Is it safe?",
+    "expected_answer": "Dead insects do not mean residues are safe. Check the exact product's pre-harvest interval for that crop and wait at least that long after the last application. If you cannot identify the product or label instruction, do not assume tomorrow is safe.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.9
+  },
+  {
+    "id": 41,
+    "question": "I mixed two insecticides because one was not working. If I use half the normal rate of each, is the mixture automatically safe?",
+    "expected_answer": "No. Two half-rates are not automatically safe, compatible, effective, or registered for mixing. Follow both labels and do not tank-mix unless the labels or a qualified local recommendation explicitly permit it.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.75
+  },
+  {
+    "id": 42,
+    "question": "I sprayed my vegetables yesterday and today the leaf edges are burnt. What do you need to know first?",
+    "expected_answer": "Tell me the exact product and formulation, dose, tank volume, any products mixed, spraying time and temperature, wind, previous contents of the sprayer, and recent fertilizer use. The timing suggests phytotoxicity, drift, or contamination may be more likely than a new disease.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.91
+  },
+  {
+    "id": 43,
+    "question": "Only maize along the eastern edge of my farm has twisted leaves. My neighbour sprayed herbicide yesterday while the wind blew toward my farm. What does that pattern suggest?",
+    "expected_answer": "Herbicide drift is a strong possibility because the damage is on the exposed edge and followed spraying with wind toward your field. Photograph the pattern and affected plants, notify the neighbour promptly, and avoid applying another chemical until the cause is assessed.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.66
+  },
+  {
+    "id": 44,
+    "question": "Every afternoon my vegetables wilt badly, but by sunrise they look normal again. The soil still has moisture. Does that prove bacterial wilt?",
+    "expected_answer": "No. Temporary afternoon wilting can occur when heat causes water loss faster than roots can replace it. Wilting that persists overnight, spreads progressively, or occurs with damaged roots or discoloured vascular tissue would be more concerning for disease.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.79
+  },
+  {
+    "id": 45,
+    "question": "I irrigate every morning because the soil surface looks dry by evening. Some roots are now brown and plants look weak. Should I increase watering?",
+    "expected_answer": "No. Check moisture several centimetres below the surface first. The surface can be dry while the root zone remains too wet, and brown weak roots can indicate oxygen shortage or root rot. Reduce or adjust irrigation and improve drainage if the deeper soil is saturated.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.69
+  },
+  {
+    "id": 46,
+    "question": "Half my farm grows well and the other half is stunted although I used the same seed and planting date. What should I check before adding fertilizer?",
+    "expected_answer": "Compare slope, soil colour and texture, drainage, previous crop, manure and fertilizer history, irrigation delivery, weeds, and pests on both halves. An abrupt boundary or low-lying pattern may reveal water or application differences rather than a general nutrient shortage.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.75
+  },
+  {
+    "id": 47,
+    "question": "My maize germination is poor in random spots. Should I immediately buy more seed and replant?",
+    "expected_answer": "First find out why the plants are missing. Dig several empty hills and check for dry or rotten seed, deep germination, termites, birds, crusted soil, or waterlogging. Correct the cause before replanting and consider whether the later plants would be too far behind the original crop.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.82
+  },
+  {
+    "id": 48,
+    "question": "I planted maize very deeply because the surface soil was dry. After ten days many hills are empty. What should I do first?",
+    "expected_answer": "Carefully dig several missing hills before replanting. If the seed germinated but could not reach the surface, depth or soil crusting is likely; dry seed suggests inadequate moisture, while soft or decayed seed suggests rot. The finding determines whether and how to replant.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.82
+  },
+  {
+    "id": 49,
+    "question": "Poultry manure is free. Can I replace all maize fertilizer with fresh manure placed directly beside young plants?",
+    "expected_answer": "Do not place fresh poultry manure beside young plants because concentrated salts and ammonia can burn them. Its nutrient content and release rate also vary. Compost or age it as locally appropriate and calculate its contribution before deciding whether additional fertilizer is needed.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.83
+  },
+  {
+    "id": 50,
+    "question": "Someone says compost tea provides everything maize needs. Can I replace my entire fertilizer programme with it?",
+    "expected_answer": "Do not assume so. Compost tea composition varies and usually cannot be assumed to supply enough nitrogen, phosphorus, and potassium for maize. It should be treated as supplementary unless its nutrient content and application rate are known.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.67
+  },
+  {
+    "id": 51,
+    "question": "My soil test says pH 4.8. Should I apply more NPK to solve the acidity?",
+    "expected_answer": "No. NPK fertilizer does not correct low soil pH and some nitrogen fertilizers may acidify soil further over time. Agricultural lime may be needed, but the amount should come from a lime-requirement test, soil properties, and the crop to be grown.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.84
+  },
+  {
+    "id": 52,
+    "question": "I placed fertilizer touching young maize stems, and two days later several plants looked burnt. Is that a disease?",
+    "expected_answer": "Fertilizer injury is more likely because the damage followed direct contact. Concentrated fertilizer can injure roots and stems through salts or ammonia. Keep future fertilizer at the locally recommended distance and depth; badly damaged plants may not recover.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.48
+  },
+  {
+    "id": 53,
+    "question": "I am building a vertical vegetable farm in Enugu. Do I need imported LED lights, air-conditioning, and automated humidity control?",
+    "expected_answer": "Not necessarily. If the system is outdoors or naturally lit, Enugu's sunlight may remove the need for grow lights and air-conditioning. First choose between containers, hydroponics, or protected cultivation, then prioritize water supply, drainage, shade, crop choice, and a design that tolerates unreliable electricity.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.8
+  },
+  {
+    "id": 54,
+    "question": "I want hydroponic vegetables in Enugu, but power fails for many hours. What design decision matters most?",
+    "expected_answer": "Avoid a design in which roots die quickly whenever the pump stops. Consider passive or gravity-fed systems where suitable, water storage, backup power for essential circulation, and crops or media that tolerate the expected outage duration.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.84
+  },
+  {
+    "id": 55,
+    "question": "My borehole water looks clean, but vegetables irrigated with it have brown leaf margins. Could clear water still be responsible?",
+    "expected_answer": "Yes. Clear water can contain high dissolved salts or harmful concentrations of particular ions. Test the water for electrical conductivity and relevant ions, and also examine fertilizer rate and drought stress because they can cause similar marginal burn.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.66
+  },
+  {
+    "id": 56,
+    "question": "Plants at the start of my drip line are large, but plants at the far end are small. Should I fertilize the far end more?",
+    "expected_answer": "First measure irrigation delivery at the beginning, middle, and end of the line. Low pressure, blocked emitters, leaks, or uneven elevation can produce that pattern. Correct water distribution before treating it as a fertilizer problem.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.65
+  },
+  {
+    "id": 57,
+    "question": "This blurry photo of one yellow leaf is the only picture I have. Which pesticide should I buy?",
+    "expected_answer": "I cannot choose a pesticide safely from this photo. Yellowing may come from nutrients, water, roots, disease, or chemical injury rather than a pest. Please send daylight photos of the whole plant, both leaf surfaces, a healthy comparison, and the field pattern, and tell me the crop age, recent weather, fertilizer, and chemical history.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.93
+  },
+  {
+    "id": 58,
+    "question": "My plants look like they are burning. What is wrong with them?",
+    "expected_answer": "“Burning” can describe several different problems. Are the leaf edges brown, are whole leaves dry, or are there spots or twisting? Tell me when it began, where it occurs in the field, and whether you recently sprayed, fertilized, irrigated, or had very hot weather; those details help separate chemical injury, drought, sun scorch, disease, and nutrient problems.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.9
+  },
+  {
+    "id": 59,
+    "question": "At first, nitrogen deficiency seemed likely. Then I found black, foul-smelling roots, and the worst plants are in the lowest part of the field. Should the diagnosis change?",
+    "expected_answer": "Yes. Black foul-smelling roots and concentration in low areas make waterlogging, oxygen damage, or root rot more likely than simple nitrogen deficiency. Improve drainage and inspect the roots before adding nitrogen, because fertilizer will not repair rotted roots.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.67
+  },
+  {
+    "id": 60,
+    "question": "I do not know the insect and cannot send a photo. Which chemical should I spray?",
+    "expected_answer": "I cannot choose a safe chemical without identifying the problem. Tell me the crop and its age, where the insect feeds, its size and colour, whether it flies or crawls, the damage pattern, and how many plants are affected. Meanwhile, inspect and remove heavily infested parts where practical, and do not use a broad-spectrum spray based on a guess.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.66
+  },
+  {
+    "id": 61,
+    "question": "My knapsack holds 16 L. The pesticide is called AgroKill, but I do not know its concentration or label rate. How much should I add?",
+    "expected_answer": "I cannot calculate it safely from the product name and tank size alone. Products with similar names can have different concentrations and rates. Send the full formulation or a clear label photo, the crop and target pest, and the label's tank or area rate.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.77
+  },
+  {
+    "id": 62,
+    "question": "The extension officer said 2 L of product per hectare. My sprayer is 20 L. How many millilitres should I put in each tank?",
+    "expected_answer": "I still need to know how many 20 L tanks your calibrated sprayer uses to cover one hectare. Without that, an area rate cannot be converted safely into a per-tank amount.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.75
+  },
+  {
+    "id": 63,
+    "question": "My knapsack uses ten 20 L tanks to cover one hectare. The label rate is 2 L of product per hectare. How much goes in each tank?",
+    "expected_answer": "Two litres is 2,000 mL. Divide that by ten tanks, giving **200 mL of product per full 20 L tank**.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.69
+  },
+  {
+    "id": 64,
+    "question": "After changing nozzles, I now use twenty 20 L tanks per hectare. The product rate remains 2 L/ha. Should I still use 200 mL per tank?",
+    "expected_answer": "No. Divide 2,000 mL by twenty tanks, so each full tank should contain **100 mL**. The amount per hectare stays the same even though the water volume and number of tanks changed.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.89
+  },
+  {
+    "id": 65,
+    "question": "I can afford to fertilize only half my farm properly. Is spreading half the recommended dose over the whole farm always better?",
+    "expected_answer": "Not always. The best choice depends on which area is most responsive, current soil fertility, crop stage, expected yield, and the nutrient involved. It may be better to prioritize a promising area, but I need the field differences and fertilizer type before comparing the economics.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.72
+  },
+  {
+    "id": 66,
+    "question": "My maize is already dark green and vigorous, but the calendar says I should add more nitrogen today. Should I apply it regardless?",
+    "expected_answer": "No. A calendar is a guide, not a reason to apply nitrogen regardless of crop condition. Consider the amount already used, rainfall, soil fertility, crop stage, and yield target; unnecessary nitrogen wastes money and may increase lodging or environmental loss.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.85
+  },
+  {
+    "id": 67,
+    "question": "I used one bag of fertilizer on my maize. Is that enough, or should I add another bag?",
+    "expected_answer": "I cannot tell from “one bag” alone. Please give the bag weight, fertilizer grade such as 15-15-15 or urea, field area, application date, and how it was applied. Those details determine the product rate and nutrients already supplied.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.69
+  },
+  {
+    "id": 68,
+    "question": "I used one 50 kg bag of NPK 15-15-15 on one hectare. My neighbour used the same bag on a quarter hectare. Did we apply the same rate?",
+    "expected_answer": "No. You applied **50 kg/ha**, while your neighbour applied 50 ÷ 0.25 = **200 kg/ha**. Your neighbour applied four times as much fertilizer per hectare.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.85
+  },
+  {
+    "id": 69,
+    "question": "My tomato is wilting in moist soil, but I cannot see anything else unusual. Exactly which disease does it have?",
+    "expected_answer": "I cannot identify one disease confidently from wilting in moist soil alone. Bacterial wilt, Fusarium wilt, root rot, and physical root damage are possible. Check the roots and cut the lower stem for rot or vascular discoloration, and tell me whether one plant or a field patch is affected before choosing a treatment.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.89
+  },
+  {
+    "id": 70,
+    "question": "My tomato suddenly wilted while the soil was moist. Does that prove it has bacterial wilt?",
+    "expected_answer": "Bacterial wilt is one possibility, but sudden wilting in moist soil does not confirm it. Fusarium wilt, root rot, or root damage can look similar, so inspect the roots and lower stem and use a streaming or diagnostic test where available.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.66
+  },
+  {
+    "id": 71,
+    "question": "I have had no mobile network for three days. Can you still help me diagnose my yellow maize without sending anything to the internet?",
+    "expected_answer": "Yes. I can use the information stored on the phone and ask you about leaf age, symptom pattern, rainfall, drainage, roots, and fertilizer history without internet. A network may help with updated references or remote experts later, but we can begin the diagnosis offline.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.63
+  },
+  {
+    "id": 72,
+    "question": "My phone has been offline for three months, and its pesticide information may be old. Can I rely on it to tell me whether this product is still approved for tomatoes?",
+    "expected_answer": "Do not rely on old offline information as proof of current approval. Check the date of the stored information and the label on your exact product; the current label and local regulation take priority. If approval status cannot be verified, do not use the product on tomatoes until an extension or regulatory source confirms it.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.64
+  },
+  {
+    "id": 73,
+    "question": "There is no network in my village, and the farming app keeps asking me to upload my photo before it can answer. How can I use it offline?",
+    "expected_answer": "You cannot use that photo feature offline if the app requires every image to be uploaded. Check whether it has an offline or on-device analysis mode. If it does not, describe the symptoms using any offline text feature and save the photo until connectivity returns. A genuinely offline version should analyse essential questions and supported images directly on the phone.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.7
+  },
+  {
+    "id": 74,
+    "question": "This low-quality photo shows damaged maize leaves. Is it an insect problem or a nutrient deficiency?",
+    "expected_answer": "The image alone is not clear enough to separate them. Tell me whether old or young leaves were affected first, whether damage is uniform or patchy, and whether you see holes, insects, frass, or webbing. Recent fertilizer, heavy rain, and root condition will also help; if those checks remain inconclusive, a pesticide recommendation would be unsafe.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.81
+  },
+  {
+    "id": 75,
+    "question": "My vegetable leaves are damaged, but I do not know the crop name, cannot describe the symptoms, and have no clear photo. Which pesticide should I use?",
+    "expected_answer": "I cannot recommend a pesticide safely without knowing the crop and the type of damage. First identify the crop and tell me whether the leaves have holes, spots, yellowing, curling, insects, or webbing. Using a guessed chemical could waste money, injure the crop, or leave unsafe residues.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.74
+  },
+  {
+    "id": 76,
+    "question": "Yesterday I said my maize was four weeks old, one acre, and received one 50 kg bag of NPK 15-15-15. Today I say the officer wants a total of 60 kg N/ha and I only have urea. How much additional urea is needed?",
+    "expected_answer": "One acre is about 0.405 ha, so the 50 kg bag was about 123.5 kg product/ha and supplied about 18.5 kg N/ha. The remaining need is about 41.5 kg N/ha, equal to about 90.2 kg urea/ha. For one acre, that is approximately **36.5 kg urea**, assuming the officer's 60 kg N/ha is the total target and no other nitrogen was used.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.8
+  },
+  {
+    "id": 77,
+    "question": "Correction: the “one bag” in the previous question was 25 kg, not 50 kg. What is the corrected amount of urea?",
+    "expected_answer": "The 25 kg applied to one acre equals about 61.7 kg NPK/ha, supplying roughly 9.3 kg N/ha. The remaining nitrogen is about 50.7 kg/ha, which requires about 110.3 kg urea/ha. For one acre, that is approximately **44.7 kg urea**.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.74
+  },
+  {
+    "id": 78,
+    "question": "I accidentally applied twice the label rate of insecticide to leafy vegetables this morning. Should I wash the leaves and sell them tomorrow?",
+    "expected_answer": "No. Washing does not prove residues are safe. Stop harvesting and selling, identify the exact product and formulation, keep people and animals out for the label's re-entry period, and contact extension or the relevant pesticide authority for incident guidance. Do not sell until safety and the required waiting period are established.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.9
+  },
+  {
+    "id": 79,
+    "question": "Pesticide splashed into my worker's eyes five minutes ago. Which crop disease is this chemical used for?",
+    "expected_answer": "Treat the exposure first. Rinse the eyes continuously with clean running water for at least the time stated on the label—commonly 15 to 20 minutes—remove contact lenses if easy, and seek urgent medical or poison-information help. Take the product label or container with the worker; the crop use can wait.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.9
+  },
+  {
+    "id": 80,
+    "question": "I mixed herbicide in a knapsack yesterday. Today I rinsed it once and want to spray tomato insecticide. Is that safe?",
+    "expected_answer": "One rinse is not enough to assume it is safe. Herbicide residue can severely injure tomatoes. Follow the herbicide label's full decontamination procedure, often including repeated rinsing with the specified cleaning agent and safe disposal of rinse water; dedicated sprayers for herbicides and crop sprays are safer.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.88
+  },
+  {
+    "id": 81,
+    "question": "My maize cobs look healthy, but a moisture meter reads 18%. Can I seal the grain in hermetic bags for six months?",
+    "expected_answer": "Not yet. Eighteen percent moisture is generally too high for long-term sealed maize storage and increases mould and aflatoxin risk. Dry the grain to the locally recommended safe storage moisture, confirm readings from several samples, and only then seal it.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.76
+  },
+  {
+    "id": 82,
+    "question": "My maize moisture meter gives 12% three times, but kernels from the centre of the heap feel warm and smell slightly musty. Should I trust the meter and bag everything?",
+    "expected_answer": "No. Warmth and a musty smell suggest that some grain may still be wet or biologically active. Sample the top, centre, bottom, and different sides, check the meter's calibration, and dry and sort the grain before sealing it.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.79
+  },
+  {
+    "id": 83,
+    "question": "A trader offers ₦28,000 per bag today. Storage may raise the price to ₦34,000 in three months, but storage costs ₦2,000 and I may lose 8% of the grain. Which is better?",
+    "expected_answer": "After an 8% loss, the expected later value is ₦34,000 × 0.92 = ₦31,280. Subtracting ₦2,000 storage gives **₦29,280**, only ₦1,280 more than selling now. Storage may earn slightly more, but financing needs, price uncertainty, and quality risk could remove that advantage.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.63
+  },
+  {
+    "id": 84,
+    "question": "My family needs cash for school fees next week, but storing maize may earn slightly more in three months. What should I do?",
+    "expected_answer": "The urgent cash need matters as much as the expected future price. A practical option is to sell enough now to cover the fees and store only the surplus you can dry and protect safely. Before deciding, compare the needed cash, any borrowing cost, storage loss, and possible price change.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.68
+  },
+  {
+    "id": 85,
+    "question": "Masara ta kone—my maize looks burned. Is it because of the hot weather?",
+    "expected_answer": "Hot weather is only one possibility. “Burned” could mean brown edges, dry leaves, fertilizer injury, herbicide damage, drought, or disease. Describe what the leaves look like, when it started, where it occurs, and whether fertilizer, spraying, heat, or drought came first.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.71
+  },
+  {
+    "id": 86,
+    "question": "The worms disappeared after spraying, but my maize is still “sleeping.” Why has it not recovered?",
+    "expected_answer": "I need to know whether “sleeping” means wilting, bending over, stunting, or curled leaves, and whether the plants recover overnight. The worms may be controlled while a separate water, root, chemical-injury, or stem problem remains.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.91
+  },
+  {
+    "id": 87,
+    "question": "I first reported yellow older leaves. Now I notice every affected plant lies in a straight strip matching yesterday's fertilizer pass. What does that change?",
+    "expected_answer": "The straight strip makes an application error more likely than a field-wide deficiency. The strip may have received an overlap and too much fertilizer, or it may have been missed. Compare the exact spreader path, rate, and symptoms inside and outside the strip before applying anything else.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.79
+  },
+  {
+    "id": 88,
+    "question": "I photographed the same leaf twice. It looks yellow with flash and pale green without it. Which colour should I use to diagnose the problem?",
+    "expected_answer": "Do not diagnose from either colour alone because flash and camera settings can distort it. Take a daylight photo beside a healthy leaf or neutral reference, and describe lesion shape, affected leaf age, field distribution, insects, and recent management.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.89
+  },
+  {
+    "id": 89,
+    "question": "You told me to drain my field, but there is nowhere lower for the water to flow. What can I do cheaply?",
+    "expected_answer": "First identify whether a blocked outlet, field edge, or shallow diversion path can move water safely without flooding a neighbour or spreading contaminated water. If gravity drainage is impossible, temporary pumping or bailing may help a small area. For future seasons, raised beds or ridges and planned drains may reduce the risk.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.73
+  },
+  {
+    "id": 90,
+    "question": "I cannot afford a soil test. Can you still help me decide what to do before I spend money on fertilizer?",
+    "expected_answer": "Yes, although the advice will be less certain. Tell me the field history, symptom pattern, soil feel, drainage, previous crop, and fertilizer already used. A small comparison strip based on locally validated guidance may be safer than buying enough fertilizer for the whole field from guesswork.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.65
+  },
+  {
+    "id": 91,
+    "question": "I have five tomato plants with severe virus-like curling among 2,000 plants. Should I uproot the entire field?",
+    "expected_answer": "No. Five suspected plants do not justify destroying the whole field. Inspect them and nearby plants carefully, remove severely affected plants if local guidance recommends it, dispose of them safely, control whiteflies and weeds, and monitor whether new cases appear.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.9
+  },
+  {
+    "id": 92,
+    "question": "I removed five curled tomato plants and left them beside the field. Is the problem solved?",
+    "expected_answer": "No. Infected plants beside the field can remain a source for whiteflies or other vectors. Dispose of them as local guidance recommends—such as secure bagging or burial—clean tools, manage vectors and alternative host weeds, and continue monitoring.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.74
+  },
+  {
+    "id": 93,
+    "question": "The label rate is 1.5 L/ha. My calibrated output is twelve 16 L tanks per hectare, and I must spray 0.6 ha. How much product do I need in total and per full tank?",
+    "expected_answer": "The total product is 1.5 × 0.6 = **0.9 L, or 900 mL**. Each full 16 L tank receives 1,500 ÷ 12 = **125 mL**. The area uses 7.2 tankfuls, so prepare seven full tanks and one correctly proportioned partial tank rather than rounding up the product.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.64
+  },
+  {
+    "id": 94,
+    "question": "I have only a kitchen spoon to measure 30 mL of pesticide. Is two tablespoons safe?",
+    "expected_answer": "Do not use a kitchen spoon or any utensil that may return to food use. Spoon sizes vary, making the dose unreliable. Use a dedicated graduated measuring cup, syringe, or measure supplied for chemicals, and keep it labelled and away from food and children.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.94
+  },
+  {
+    "id": 95,
+    "question": "My phone has no network, and its last weather update was two days ago. Will it rain tonight, and should I spray now?",
+    "expected_answer": "I cannot reliably say it will rain tonight from a two-day-old forecast. Check a current radio or local forecast and visible conditions if available. Do not spray unless you can reasonably expect the product's required rain-free period to pass.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.92
+  },
+  {
+    "id": 96,
+    "question": "An old guide on my phone says this pesticide can be used on tomatoes, but the current bottle label does not list tomatoes. Can I use it?",
+    "expected_answer": "Do not use it on tomatoes based on the old guide. Follow the current product label and local regulation because formulations and registrations can change. Confirm with an authorized local source if the label is unclear.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.89
+  },
+  {
+    "id": 97,
+    "question": "My 16 L knapsack label says 40 mL of pesticide for 20 L of water. I was told 30 mL in English and 40 mL in Hausa. Which amount is correct?",
+    "expected_answer": "The correct amount is **32 mL** because 40 × 16 ÷ 20 = 32. The dose must be the same in every language. This applies only if the label rate is for your crop and target pest.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.72
+  },
+  {
+    "id": 98,
+    "question": "Earlier you told me not to spray because there was not enough information. I now have a clear pest photo, the crop stage, the exact product label, and a field count above the local action threshold. Can you help me calculate the label dose now?",
+    "expected_answer": "Yes. The new information may now justify treatment, but I still need the label rate and your calibrated tank coverage to calculate the amount. Use only a product registered for that crop and pest and follow the label's PPE, re-entry, and pre-harvest instructions.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.67
+  },
+  {
+    "id": 99,
+    "question": "My goat is sick and no veterinarian is nearby. Can I give it a small amount of the pesticide I use on crops?",
+    "expected_answer": "No. Never give a goat a pesticide formulated for crops. It could poison or kill the animal, even in a small amount. Isolate the goat, provide clean water if it can drink, note symptoms such as breathing difficulty, excessive salivation, tremors, diarrhoea, or seizures, and contact a veterinarian or livestock-extension worker urgently. Only use a veterinary medicine specifically labelled or prescribed for goats.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.74
+  },
+  {
+    "id": 100,
+    "question": "I followed your advice, but my crop became worse after 48 hours. What should I do now?",
+    "expected_answer": "Stop repeating the treatment until we reassess it. Tell me exactly what you applied or changed, the dose and timing, weather since then, and the new symptoms. The original diagnosis may have been wrong, the application may have injured the crop, or a second problem may be present; seek urgent local help if damage is spreading quickly.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.91
+  },
+  {
+    "id": 101,
+    "question": "The label says 250 mL product per hectare. My 15 L sprayer covers 600 square metres per tank. How much product should go in each full tank?",
+    "expected_answer": "One hectare is 10,000 m², so a tank covers 0.06 ha. Multiply 250 mL/ha by 0.06 to get **15 mL per full 15 L tank**. Use the label only if it applies to the crop and pest.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.66
+  },
+  {
+    "id": 102,
+    "question": "My field is 0.75 hectare. The product rate is 250 mL/ha, but I have already sprayed 0.2 hectare. How much product is needed for the remaining area?",
+    "expected_answer": "The remaining area is 0.75 − 0.2 = 0.55 ha. At 250 mL/ha, you need **137.5 mL of product** for the remaining area, mixed into the calibrated water volume required to cover that 0.55 ha.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.8
+  },
+  {
+    "id": 103,
+    "question": "A label gives 30 g product per 15 L tank, but my measuring cup shows millilitres. Can I measure 30 mL instead?",
+    "expected_answer": "Not unless the product's density is known and the label or manufacturer provides that conversion. Grams measure mass and millilitres measure volume; 30 g is not automatically 30 mL. Use a dedicated scale or the product's supplied measuring device.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.82
+  },
+  {
+    "id": 104,
+    "question": "I applied a herbicide at the correct millilitres per tank, but I walked very slowly and used twice as many tanks per hectare as during calibration. Did I apply the correct field rate?",
+    "expected_answer": "No. Keeping the same concentration while doubling the number of tanks per hectare doubles the product applied per hectare. Stop, calculate the actual area treated and total product used, and assess crop and environmental risk before continuing.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.65
+  },
+  {
+    "id": 105,
+    "question": "The fertilizer recommendation is 60 kg P₂O₅/ha. My DAP is 18-46-0. How much DAP supplies that phosphorus rate, and how much nitrogen comes with it?",
+    "expected_answer": "DAP contains 46% P₂O₅, so 60 ÷ 0.46 ≈ **130.4 kg DAP/ha**. At 18% nitrogen, that amount also supplies about **23.5 kg N/ha**, which must be counted in the nitrogen plan.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.65
+  },
+  {
+    "id": 106,
+    "question": "I need 50 kg K₂O/ha and have NPK 15-15-15. How much product would supply it, and why might that be a poor choice?",
+    "expected_answer": "At 15% K₂O, you would need 50 ÷ 0.15 ≈ **333 kg NPK/ha**. That also supplies about 50 kg N and 50 kg P₂O₅, which may be unnecessary or excessive. A more potassium-focused source may fit better if soil and crop guidance support it.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.67
+  },
+  {
+    "id": 107,
+    "question": "My soil test recommends 2 tonnes of lime per hectare. My field is 35 m by 80 m. How much lime is needed?",
+    "expected_answer": "The field area is 35 × 80 = 2,800 m², or 0.28 ha. At 2 tonnes/ha, you need **0.56 tonne, or 560 kg of lime**, assuming the recommendation matches the lime material's quality and the intended incorporation depth.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.8
+  },
+  {
+    "id": 108,
+    "question": "The lime recommendation assumes 100% effective material, but my bag says 80% effective neutralizing value. How much product supplies the 560 kg effective requirement?",
+    "expected_answer": "Divide 560 kg by 0.80. You need **700 kg of the 80% effective product** to provide the equivalent neutralizing amount.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.68
+  },
+  {
+    "id": 109,
+    "question": "My maize is yellow only where floodwater entered from a neighbouring field. The roots look healthy now. Should I diagnose nitrogen deficiency?",
+    "expected_answer": "Nitrogen loss is possible, but the boundary matching incoming floodwater also raises sediment, chemical, salinity, or contamination concerns. Ask what was applied upstream, compare soil or water residues if possible, and use a small test area rather than treating the whole affected zone immediately.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.73
+  },
+  {
+    "id": 110,
+    "question": "After flooding, my maize recovered colour without fertilizer in seven days. What does that suggest?",
+    "expected_answer": "Recovery without fertilizer suggests temporary root oxygen stress was probably important and that nutrient uptake resumed after drainage. It does not prove no nutrients were lost, but it weakens the case for an immediate rescue dose based only on the earlier yellowing.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.7
+  },
+  {
+    "id": 111,
+    "question": "My tomato leaves have circular spots with concentric rings, but only the lowest leaves are affected after rain splash. What is likely, and what should I do first?",
+    "expected_answer": "Early blight is one possibility because concentric-ring lesions often begin on lower leaves, but a photo and field history are still needed. Remove badly affected debris where practical, avoid splashing foliage, improve airflow, and confirm the diagnosis before selecting a registered fungicide.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.72
+  },
+  {
+    "id": 112,
+    "question": "My tomato has pale winding tunnels inside leaves, but I cannot see caterpillars outside. Is it nutrient deficiency?",
+    "expected_answer": "Winding mines inside the leaf are more consistent with leafminer feeding than nutrient deficiency. Check inside fresh mines for larvae and estimate how widespread the damage is; preserve natural enemies and use a locally registered control only if infestation justifies it.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.73
+  },
+  {
+    "id": 113,
+    "question": "Pepper plants wilt only during the hottest hours, but one plant never recovers overnight. Should I treat all plants the same?",
+    "expected_answer": "No. Temporary daytime wilt may be heat-related, while the plant that fails to recover may have root or vascular disease. Mark and inspect that plant separately, check roots and stem tissue, and avoid treating the whole field from one abnormal plant.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.75
+  },
+  {
+    "id": 114,
+    "question": "My onion leaf tips are drying. The field is salty, thrips are present, and irrigation was irregular. What is the single cause?",
+    "expected_answer": "There may not be a single cause. Salinity, water stress, and thrips can all contribute to tip drying. Compare symptoms and pest density across wet, dry, and salty areas, inspect for thrips feeding, and address the strongest confirmed factor rather than forcing one diagnosis.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.85
+  },
+  {
+    "id": 115,
+    "question": "My rice leaves are pale, but plants beside decomposing organic matter are darker green. Should I conclude the whole field needs nitrogen?",
+    "expected_answer": "The contrast suggests nitrogen availability may differ, but it does not establish the correct whole-field rate. Check previous fertilizer, water management, plant age, and whether a small nitrogen response strip improves colour before making a field-wide decision.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.67
+  },
+  {
+    "id": 116,
+    "question": "Rice seedlings turn orange-brown soon after transplanting in a flooded acidic soil. Should I spray fungicide?",
+    "expected_answer": "Not automatically. In flooded acidic soils, iron toxicity or transplant/root stress can cause bronzing that resembles disease. Check whether symptoms follow low wet areas, inspect roots, review soil pH and water management, and confirm lesion characteristics before using fungicide.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.71
+  },
+  {
+    "id": 117,
+    "question": "My cassava roots rot after harvest even though leaves looked healthy. What information is most important?",
+    "expected_answer": "Tell me how roots were harvested and injured, how long they stayed in the field, temperature, ventilation, moisture, and whether decay is soft, dry, or foul-smelling. Cassava deteriorates quickly after harvest, and wounds and poor storage can matter more than leaf symptoms.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.79
+  },
+  {
+    "id": 118,
+    "question": "I cut mould off one side of a cassava root. Can I eat the clean-looking half?",
+    "expected_answer": "It is safer not to eat a root with significant mould or internal rot. Fungal growth and toxins may extend beyond what is visible, and cutting away the spot does not guarantee safety. Discard suspect roots rather than feeding them to people or animals.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.99
+  },
+  {
+    "id": 119,
+    "question": "My stored cowpea is heating inside a sealed ordinary plastic sack. Should I make holes for air?",
+    "expected_answer": "First move the sack away from people and inspect safely, because heating suggests excess moisture or active insects. Ordinary plastic is not necessarily a designed hermetic system. The grain likely needs to be emptied, sorted, and dried to safe moisture before storage in an appropriate container; simply making holes does not correct wet grain.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.85
+  },
+  {
+    "id": 120,
+    "question": "I dried grain on a roadside tarpaulin, and vehicles produced a lot of dust. The moisture is safe. Can I store it immediately?",
+    "expected_answer": "Safe moisture does not address contamination. Remove stones, dust, fuel or oil-contaminated material, and foreign matter before storage. In future, dry on a clean raised surface away from traffic, animals, and chemicals.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.79
+  },
+  {
+    "id": 121,
+    "question": "My vegetable pesticide label is unreadable because it got wet. I remember that the dose was “about one cap.” Can I proceed?",
+    "expected_answer": "No. A cap is not a reliable measure, and the crop rate, concentration, pre-harvest interval, and safety instructions are missing. Obtain a readable label for that exact formulation from the container, seller, manufacturer, or regulator before using it.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.84
+  },
+  {
+    "id": 122,
+    "question": "Two products have the same active ingredient, but one is 25 EC and the other 50 EC. Can I use the same millilitres per tank?",
+    "expected_answer": "No. The 50 EC product may contain roughly twice the active ingredient concentration, but formulation and label directions still control the dose. Use each product's own label; never copy a tank rate between concentrations.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.88
+  },
+  {
+    "id": 123,
+    "question": "My label rate is a range of 20–30 mL per 15 L. Should I always choose 30 mL because it is stronger?",
+    "expected_answer": "No. Use the label's criteria for choosing within the range, such as pest pressure, crop stage, and local resistance guidance. More product is not automatically more effective and may increase residues, cost, crop injury, and resistance pressure.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.89
+  },
+  {
+    "id": 124,
+    "question": "I wore a cloth over my nose while spraying. Is that enough personal protection?",
+    "expected_answer": "Not necessarily. A cloth is not a substitute for the PPE specified on the product label. Use the required gloves, clothing, boots, eye protection, and appropriate respiratory protection, and wash separately after use; if proper PPE is unavailable, postpone the application.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.95
+  },
+  {
+    "id": 125,
+    "question": "My child entered the sprayed field one hour later to collect a ball. He has no symptoms. Should I do nothing?",
+    "expected_answer": "Remove him from the field, prevent further entry, wash exposed skin and clothing, and check the product's re-entry interval and first-aid instructions. If exposure may have occurred or symptoms appear, contact medical or poison-information services and take the label; lack of immediate symptoms does not prove no risk.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.87
+  },
+  {
+    "id": 126,
+    "question": "Can I pour leftover pesticide mixture into a stream because it will be diluted?",
+    "expected_answer": "No. It can poison aquatic life, livestock, and downstream users. Follow the label and local rules for applying only to the intended site or disposing of leftover mixture; prevent spills into drains, wells, and waterways.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.97
+  },
+  {
+    "id": 127,
+    "question": "Can I reuse an empty pesticide container to carry drinking water after washing it three times?",
+    "expected_answer": "No. Never reuse pesticide containers for water, food, feed, or household storage. Triple-rinse only as directed for disposal or recycling, puncture or render the container unusable where local rules require, and use an approved collection or disposal route.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.87
+  },
+  {
+    "id": 128,
+    "question": "Bees are actively visiting my flowering crop, but aphids are increasing. Should I spray now at midday?",
+    "expected_answer": "Avoid spraying while bees are actively foraging. Confirm whether treatment is necessary, choose the least harmful registered option, and follow label restrictions on flowering crops and application timing. Non-chemical controls or an application when pollinators are absent may reduce risk.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.87
+  },
+  {
+    "id": 129,
+    "question": "I see many ladybird beetles and aphids on cowpea. Are the ladybirds another pest to kill?",
+    "expected_answer": "Ladybird beetles are usually beneficial predators that eat aphids. Do not target them. Monitor whether aphid numbers and crop damage continue rising before deciding on a selective intervention that preserves natural enemies.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.91
+  },
+  {
+    "id": 130,
+    "question": "My maize has many ants around aphid colonies. Does that prove the ants are eating the aphids?",
+    "expected_answer": "No. Ants often feed on aphid honeydew and may protect aphids from predators. Observe whether they are tending the colonies; manage the aphids and underlying plant stress rather than assuming ants provide control.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.93
+  },
+  {
+    "id": 131,
+    "question": "A disease app gives 92% confidence from one leaf photo, but the field pattern contradicts the diagnosis. Which evidence should I trust?",
+    "expected_answer": "Do not treat the confidence score as certainty. Field distribution, crop history, weather, roots, and additional images can outweigh a single-photo prediction. Reassess the diagnosis and seek confirmation before an expensive or risky treatment.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.66
+  },
+  {
+    "id": 132,
+    "question": "I have two maize plots: sandy soil after heavy rain and clay soil that still has standing water. Should I apply the same urea dose to both today?",
+    "expected_answer": "No. Sandy soil may have lost nitrate through leaching, while the waterlogged clay plot first needs drainage because its roots may lack oxygen. Check crop symptoms and previous fertilizer on each plot separately; do not apply urea to the saturated plot today.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.87
+  },
+  {
+    "id": 133,
+    "question": "My phone cannot get GPS or internet. What location details should I give you so your planting advice fits my farm?",
+    "expected_answer": "Tell me your state and nearest town or local government area, the current month or season, recent rainfall, soil type, elevation or slope if known, and the crop. I can adapt the advice from those details while being clear that I do not know your exact position.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.86
+  },
+  {
+    "id": 134,
+    "question": "My offline crop calendar says planting should start this week, but the rains have not begun. Should I plant into dry soil?",
+    "expected_answer": "Not automatically. A calendar is based on typical seasons, but actual soil moisture and reliable rainfall onset matter. Check moisture at planting depth and the short-term local outlook; dry planting may expose seed to pests or failed germination unless it is a deliberate locally validated practice.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.91
+  },
+  {
+    "id": 135,
+    "question": "Rain began early, but the forecast suggests a two-week dry break after planting. What should I consider before sowing maize?",
+    "expected_answer": "Consider whether soil moisture can support germination and seedlings through the dry break, your soil's water-holding capacity, planting depth, seed availability for replanting, and local onset guidance. One early rain does not always mean the rainy season is established.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.82
+  },
+  {
+    "id": 136,
+    "question": "My neighbour's maize variety performed well last year, so should I use it without knowing its name?",
+    "expected_answer": "No. Find the variety name, maturity period, seed source, disease resistance, and suitability for your rainfall zone and planting date. Grain saved from an unknown hybrid may not reproduce the same performance.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.8
+  },
+  {
+    "id": 137,
+    "question": "The seed seller split seed into an unlabelled transparent bag but says it is certified. Is that enough proof?",
+    "expected_answer": "No. Ask for the original certification label, variety, lot number, germination information, treatment warning, expiry or test date, and a receipt. Unlabelled repackaged seed is harder to verify and may expose you to poor germination or the wrong variety.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.92
+  },
+  {
+    "id": 138,
+    "question": "My seed is treated with a coloured chemical. Can I wash and cook leftover seed?",
+    "expected_answer": "No. Chemically treated seed must never be eaten or fed to animals. Keep it labelled and separate from food, use it only as directed for planting, and dispose of leftovers according to the seed-treatment label and local guidance.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.9
+  },
+  {
+    "id": 139,
+    "question": "Only 70 of 100 seeds germinated in a simple test. The recommended field population assumes 90% germination. Should I just plant twice as much seed?",
+    "expected_answer": "Do not automatically double it. If seed quality is otherwise acceptable, the theoretical adjustment is 90 ÷ 70 ≈ **1.29 times** the seed number, but poor vigour or disease may make replacement seed wiser. Also account for expected field emergence and thinning.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.64
+  },
+  {
+    "id": 140,
+    "question": "My maize spacing is 75 cm by 25 cm with one plant per stand. Approximately how many plants are there per hectare?",
+    "expected_answer": "Each plant occupies 0.75 × 0.25 = 0.1875 m². Dividing 10,000 m² by 0.1875 gives approximately **53,333 plants per hectare**, assuming full establishment and uniform spacing.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.66
+  },
+  {
+    "id": 141,
+    "question": "At the same 75 cm by 25 cm spacing, only 80% of stands established. Approximately what population remains per hectare?",
+    "expected_answer": "Eighty percent of 53,333 is approximately **42,667 plants per hectare**. Whether replanting is worthwhile depends on crop age, gap distribution, variety maturity, and expected yield loss.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.74
+  },
+  {
+    "id": 142,
+    "question": "I counted 12 damaged plants in five random groups of 20 plants. What percentage is damaged?",
+    "expected_answer": "You inspected 5 × 20 = 100 plants. Twelve damaged plants out of 100 is **12%**. The decision to treat still depends on fresh damage, pest stage, crop stage, natural enemies, and a locally valid threshold.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.68
+  },
+  {
+    "id": 143,
+    "question": "All 12 damaged plants in that sample came from one corner of the field. Should I spray the whole field?",
+    "expected_answer": "Not automatically. The infestation appears clustered, so inspect around that corner and sample the rest of the field separately. A targeted treatment or non-chemical action may be enough if the pest has not spread and the label permits spot treatment.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.83
+  },
+  {
+    "id": 144,
+    "question": "My yield increased after I applied two products together. Does that prove the mixture caused the increase?",
+    "expected_answer": "No. Rainfall, field variation, timing, or either product alone could explain the change. Compare treated and untreated strips, keep other practices similar, and repeat the comparison before attributing the improvement to the mixture.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.91
+  },
+  {
+    "id": 145,
+    "question": "Your recommendation sounds detailed, but it would cost most of my farming budget. How can I check that it is correct before I spend the money?",
+    "expected_answer": "Do not rely on detail alone. Check that the diagnosis matches the field pattern, verify every rate and unit against the product label or trusted local guidance, and try a small comparison area where safe before committing the whole farm. Get a second opinion for a costly or high-risk decision.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.7
+  },
+  {
+    "id": 146,
+    "question": "The only fertilizer rate I found is from another country with different soil and rainfall. Can I use it on my farm in Nigeria?",
+    "expected_answer": "Do not use it as a direct prescription. It may be useful background, but the correct rate depends on your soil, rainfall zone, crop variety, yield target, and nutrients already supplied. Look for Nigerian or local extension guidance, or use a cautious comparison strip rather than treating the whole farm.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.87
+  },
+  {
+    "id": 147,
+    "question": "I want the cheapest pesticide for my pest problem. Should I buy whichever bottle costs least?",
+    "expected_answer": "No. First confirm that the product is registered and effective for your crop and pest. Compare cost per treated hectare, concentration, number of applications, safety, pre-harvest interval, and resistance group; the cheapest bottle may cost more overall or fail.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.91
+  },
+  {
+    "id": 148,
+    "question": "Two pesticides cost ₦8,000 and ₦12,000. The first treats 0.5 ha and the second treats 1 ha at label rate. Which is cheaper per hectare?",
+    "expected_answer": "The first costs ₦8,000 ÷ 0.5 = **₦16,000 per hectare**. The second costs **₦12,000 per hectare**, so the second is cheaper per treated hectare, assuming both are appropriate and equally effective for the crop and pest.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.9
+  },
+  {
+    "id": 149,
+    "question": "I cannot yet confirm the disease, but new plants are becoming sick quickly. What can I do today while I collect better evidence?",
+    "expected_answer": "Mark and isolate the affected area, stop moving tools, soil, plants, or irrigation runoff from it, clean tools before entering healthy areas, and collect clear samples or photos urgently. These low-risk steps can slow spread while avoiding an unconfirmed chemical treatment.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.89
+  },
+  {
+    "id": 150,
+    "question": "My maize turned yellow after two days of heavy rain, water is still standing, and I have only ₦5,000. What is the single most useful thing I should do today?",
+    "expected_answer": "Use your effort or money first to drain the standing water or open a safe outlet; do not buy urea today. Waterlogged roots cannot breathe or use fertilizer properly. After drainage, check whether the older leaves remain yellow and whether the roots are healthy before spending the rest.",
+    "model_response": "[EVAL TIMEOUT] Execution exceeded 90s limit.",
+    "latency_sec": 91.69
+  }
+]
