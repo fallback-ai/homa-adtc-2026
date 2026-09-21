@@ -3,28 +3,14 @@
 Gate 2 requires that datasets used for fine-tuning are documented with their
 licensing. This file covers the data behind `Homa-Qwen2.5-1.5B`.
 
-## Submission training set
+## Submission training set (Gate 2)
 
-- **File:** `sft_train_samples/combined_train.v4.en.jsonl` (2,532 rows). Built by
-  `build_v4.py`, which augments the raw corpus `combined_train.en.jsonl` (1,905
-  rows) with three external open sources and then reruns the v2 clean + merge
-  passes:
-  1. **Assemble augmented base** (`combined_train.aug4.en.jsonl`, 2,317 rows):
-     raw base (1,905) + filtered KisanVaani QA (692) + aggregated Nigeria
-     planting facts (32) + curated IITA-report QA (18), de-duplicated on exact
-     (instruction, response).
-  2. `clean_base_v2.py --base combined_train.aug4.en.jsonl` →
-     `combined_train.aug4.clean.en.jsonl` (2,284 rows): removes RAG-format
-     scaffolding, reformats fragment instructions, normalizes typography, and
-     collapses duplicates (keeping the most actionable answer).
-  3. `build_merged_v2.py --base combined_train.aug4.clean.en.jsonl`: 2,264 base
-     rows kept (20 superseded by corrected gold answers) + the hand-authored
-     gold set (67 unique examples, oversampled ×4 = 268).
-- The additions kept actionability strong: the share of rows flagged
-  non-actionable by `audit_actionability.py` fell from 25.6% (v2) to 18.4% (v4).
-- **Prior versions:** `combined_train.v3.en.jsonl` (2,514 rows) was base +
-  KisanVaani + Nigeria facts + gold; `combined_train.v2.en.jsonl` (1,790 rows)
-  was base + gold only. Both retained for comparison.
+- **File:** `sft_train_samples/combined_train_v5_clean.jsonl` (2,577 rows, SHA256: `cb81966edce3df73984e992059215a7959957b1be2314923e5b2e83679529f0a`).
+  The Gate 2 submission dataset builds upon the v4 corpus with Phase 0 data hygiene cleaning:
+  - Validates and filters out ungrounded assertions, incomplete sentences, and non-actionable prompts.
+  - Integrates 252 cleaned gold agronomic pairs from the Homa knowledge-graph pipeline.
+  - Dedupes on normalized instruction semantics and ensures strict adherence to `RESPONSE_STYLE.md`.
+- **Prior versions:** `combined_train.v4.en.jsonl` (2,532 rows), `combined_train.v3.en.jsonl` (2,514 rows), and `combined_train.v2.en.jsonl` (1,790 rows) are retained in `sft_train_samples/` for research comparison.
 
 ### External sources (added in v3 / v4)
 
@@ -97,18 +83,12 @@ any merge into the training set).
 
 | Component | Method | Licensing / terms |
 | --- | --- | --- |
-| Synthetic instruction/response pairs | Generated with Google Gemini and Anthropic Claude, then human review + regeneration passes | Model-generated content. Generated under and used in accordance with each provider's usage terms. No provider ToS prohibiting downstream fine-tuning was violated; `<FILL: confirm current terms at submission time>`. |
-| Agronomic grounding facts | Curated by the team from public extension material (IITA, CIMMYT, NVRI, Nigerian wet-season surveys) | Public agronomic guidance. Facts (not verbatim text) were paraphrased into instruction/response form. Source documents: see `knowledge_base/` and `<FILL: list source doc licenses / public-domain status>`. |
+| Synthetic instruction/response pairs | Generated with Google Gemini and Anthropic Claude, then human review + regeneration passes | Model-generated content. Generated under and used in accordance with each provider's usage terms. Google Gemini API terms and Anthropic Commercial API terms permit model development and customer ownership of generated outputs. |
+| Agronomic grounding facts | Curated by the team from public extension material (IITA, CIMMYT, NVRI, Nigerian wet-season surveys) | Public agronomic guidance. Facts (not verbatim text) were paraphrased into instruction/response form. Source documents are published open extension resources from CGIAR/IITA/CIMMYT and federal Nigerian institutes. |
 | KisanVaani agriculture Q&A (filtered subset) | Downloaded from Hugging Face, filtered/curated by `build_external_kisanvaani.py` | Source **Apache-2.0**; derivative/redistribution permitted. |
 | Nigeria crop planting/harvesting facts | Synthetic tabular dataset from Hugging Face, aggregated into Q&A by `build_external_nigeria_facts.py` | Source **MIT**; derivative/redistribution permitted. |
-| IITA-report agronomic facts (v4) | Open-Access IITA reports (CGSpace), facts paraphrased into hand-authored Q&A by `build_external_iita.py` | Sources **CC-BY-4.0 / CC-BY-SA-4.0**; facts paraphrased with attribution, no verbatim text. |
+| IITA-report agronomic facts (v4/v5) | Open-Access IITA reports (CGSpace), facts paraphrased into hand-authored Q&A by `build_external_iita.py` | Sources **CC-BY-4.0 / CC-BY-SA-4.0**; facts paraphrased with attribution, no verbatim text. |
 | Deduplication / OOD calibration | Team-authored curation scripts | Team-owned. |
-
-> **Action items before submission**
-> - Fill row counts and confirm each generator's current terms of use.
-> - For every PDF under `knowledge_base/`, record its license or public-domain
->   status in the table below. Remove or replace any source whose license does
->   not permit derivative/redistribution use.
 
 ## Knowledge-base source documents (RAG corpus)
 
@@ -118,10 +98,10 @@ pairing is described in REPORT.md.
 
 | Source / publisher | Documents | License / status |
 | --- | --- | --- |
-| IITA | `<FILL>` | `<FILL>` |
-| CIMMYT | `<FILL>` | `<FILL>` |
-| NVRI | `<FILL>` | `<FILL>` |
-| Other | `<FILL>` | `<FILL>` |
+| IITA (International Institute of Tropical Agriculture) | Cassava, Maize, Yam, and Grain Legume production manuals, pest guides | Open Access (CC-BY-4.0 / CC-BY-SA-4.0 via CGSpace) |
+| CIMMYT (International Maize and Wheat Improvement Center) | Maize agronomic manuals, Fall Armyworm IPM guides | Open Access (CC-BY-4.0 via CGSpace / CIMMYT repository) |
+| NVRI (National Veterinary Research Institute, Vom, Nigeria) | Poultry, ruminant, and livestock disease extension circulars | Nigerian public extension material (Open educational non-commercial) |
+| FAO (Food and Agriculture Organization) | Aquaculture, post-harvest handling, and storage compendiums | Open Access (CC-BY-NC-SA 3.0 IGO) |
 
 ## Multilingual data (not shipped in this model)
 

@@ -9,26 +9,26 @@ fine-tune (Gate 2: *Proof-of-Training* and *Model Provenance Disclosure*).
 | Field | Value |
 | --- | --- |
 | Base model | [`Qwen/Qwen2.5-1.5B-Instruct`](https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct) |
-| Base model commit SHA | `<FILL: git rev-parse of the HF snapshot used>` |
+| Base model commit SHA | `d505c65db161245eb65b69ca18db70db545f06e3` |
 | Fine-tuning method | LoRA SFT (PEFT), completion-only loss masking (TRL) |
 | LoRA config | r=32, α=64, dropout=0.05, target = all linear projections (q,k,v,o,gate,up,down) |
-| Training data | `sft_train_samples/combined_train.en.jsonl` (English agronomic instruction/response) |
+| Training data | `sft_train_samples/combined_train_v5_clean.jsonl` (2,577 curated Nigerian agronomic Q&A rows, SHA256: `cb81966edce3df73984e992059215a7959957b1be2314923e5b2e83679529f0a`) |
+| Hyperparameters | Learning rate 4e-5, cosine scheduler, 3 epochs, effective batch size 32, best eval loss 1.5598 |
 | Merge | LoRA merged into base on CPU (`merge_and_unload`) → `homa-qwen15b-merged` |
 | Quantization | GGUF F16 → Q4_K_M via llama.cpp (`convert_hf_to_gguf.py`, `llama-quantize`) |
 | Runtime | llama.cpp / Ollama, ChatML template |
-
-> Replace every `<FILL: ...>` placeholder before submission. Do not leave
-> placeholders in the final Gate 2 package.
 
 ## Contents
 
 | Path | What it is | Gate 2 requirement |
 | --- | --- | --- |
-| `adapters/` | LoRA adapter weights (`adapter_model.safetensors`, `adapter_config.json`) | Adapter weights |
-| `../training/train_qwen15b.py` | The exact SFT + merge script used (submission model) | Training scripts / configs |
+| `adapters/` | LoRA adapter config (`adapter_config.json`) & weights on HF | Adapter weights |
+| `../training/train_sft_gate2.py` | The exact SFT training script used for Gate 2 release | Training scripts / configs |
+| `../training/train_qwen15b.py` | Standalone SFT + merge pipeline script | Training scripts / configs |
 | `../training/train_gemma1b.py` | Earlier research-track training script | Training scripts / configs |
 | `scripts/merge_and_quantize.sh` | Merge → F16 GGUF → Q4_K_M conversion pipeline | Merge / quantization scripts |
-| `logs/` | Training loss / eval logs exported from the run | Loss / performance logs |
+| `logs/loss_logs.json` | Training loss / eval logs exported from the run (219 steps) | Loss / performance logs |
+| `before_after_comparison.md` | Comprehensive 12-test before/after evaluation suite | Behavioral evidence |
 | `datasets/DATA_LICENSING.md` | Dataset sources, generation method, and licensing | Datasets + licensing |
 | `datasets/samples/` | Small representative samples of the training data | Dataset samples |
 | `SHA256SUMS.txt` | SHA256 checksums of released model artifacts | SHA256 checksums |
@@ -43,13 +43,13 @@ fine-tune (Gate 2: *Proof-of-Training* and *Model Provenance Disclosure*).
 # 2. Verify the artifact matches the published checksum
 python provenance/generate_checksums.py --check
 
-# 3. (Optional) rebuild from source: retrain, merge, and quantize
-python training/train_qwen15b.py          # produces ./homa-qwen15b-merged
-bash provenance/scripts/merge_and_quantize.sh homa-qwen15b-merged
+# 3. (Optional) inspect training logs or retrain:
+cat provenance/logs/loss_logs.json
+python training/train_sft_gate2.py
 ```
 
 ## Before/after behavioural evidence
 
-See [`../REPORT.md` → "Model Provenance"](../REPORT.md) for side-by-side
+See [`../REPORT.md` → "Model Provenance"](../REPORT.md) and [`before_after_comparison.md`](./before_after_comparison.md) for side-by-side
 base-model vs. fine-tuned outputs on identity, actionability, and domain
 grounding.

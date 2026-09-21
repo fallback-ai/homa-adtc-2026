@@ -1,4 +1,4 @@
-FROM ./model/homa-qwen15b-q4.gguf
+FROM ./model/homa-qwen15b-gate2-q4.gguf
 
 # Standard ChatML template for Ollama handling full history, system prompt, and turns
 TEMPLATE """{{- if .System }}<|im_start|>system

@@ -14,6 +14,19 @@
     "load_bearing": true,
     "description": "Homa serves rural African farmers by providing crop disease diagnosis, fertilizer recommendations, pest management, seasonal planting guidance, and yield optimization"
   },
+  "provenance": {
+    "base_model_source": "huggingface:Qwen/Qwen2.5-1.5B-Instruct",
+    "base_model_commit_sha": "d505c65db161245eb65b69ca18db70db545f06e3",
+    "fine_tuning_method": "lora",
+    "training_datasets": [
+      {
+        "name": "combined_train_v5_clean.jsonl",
+        "source": "https://github.com/fallback-ai/homa-adtc-2026/blob/semifinal/sft_train_samples/combined_train_v5_clean.jsonl",
+        "record_count": 2577,
+        "sha256": "cb81966edce3df73984e992059215a7959957b1be2314923e5b2e83679529f0a"
+      }
+    ]
+  },
   "test_prompts": [
     {
       "prompt_id": "tp_001",
@@ -32,6 +45,6 @@
     "packaging": "binary_bundle"
   },
   "_runtime": {
-    "model_path": "model/homa-qwen15b-q4.gguf"
+    "model_path": "model/homa-qwen15b-gate2-q4.gguf"
   }
 }
