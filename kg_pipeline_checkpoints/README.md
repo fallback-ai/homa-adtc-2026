@@ -1,16 +1,16 @@
-# Homa Knowledge Graph (KG) to SFT Synthesis — Team Handover & Guide
+# Homa Agricultural Knowledge Graph & Decision Pipeline
 
 **Target Branch:** `semifinal`  
-**Artifact Directory:** [`kg_pipeline_checkpoints/`](../kg_pipeline_checkpoints/)  
-**Status:** Knowledge Graph constructed and traversed. Stage 4 paths available for SFT synthesis.
+**Artifact Directory:** [`kg_pipeline_checkpoints/`](./)  
+**Status:** Knowledge Graph constructed and traversed. Stage 4 decision paths available for grounded SFT training.
 
 ---
 
-## 1. Executive Summary & What Was Just Completed
+## 1. Executive Summary & Architecture
 
 We have successfully extracted, canonicalized, and traversed an authoritative **Agricultural Knowledge Graph** across our entire Nigerian agricultural corpus (110+ authoritative PDFs across crops, veterinary medicine, aquaculture, poultry, postharvest value-addition, and agribusiness surveys).
 
-The resulting files have been committed and pushed to `semifinal` under [`kg_pipeline_checkpoints/`](../kg_pipeline_checkpoints/):
+The resulting checkpoint files are tracked directly in this directory:
 
 | File | Records / Nodes | Description |
 | :--- | :--- | :--- |

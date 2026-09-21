@@ -24,6 +24,8 @@ fine-tune (Gate 2: *Proof-of-Training* and *Model Provenance Disclosure*).
 | --- | --- | --- |
 | [`adapters/`](./adapters/README.md) | LoRA adapter specification (`adapter_config.json`) & weights on HF | Adapter weights |
 | [`../training/train_sft_gate2.py`](../training/train_sft_gate2.py) | The exact SFT training script used for Gate 2 release | Training scripts / configs |
+| [`../training/homa-qwen2-5-1-5b-sft-v4.ipynb`](../training/homa-qwen2-5-1-5b-sft-v4.ipynb) | Interactive Kaggle SFT training, evaluation & quantization pipeline | Training notebooks |
+| [`../training/homa-qwen2-5-1-5b-sft-v4-consolidate.ipynb`](../training/homa-qwen2-5-1-5b-sft-v4-consolidate.ipynb) | Multi-artifact consolidation and provenance export pipeline | Training notebooks |
 | [`../training/train_qwen15b.py`](../training/train_qwen15b.py) | Standalone SFT + merge pipeline script | Training scripts / configs |
 | [`../training/train_gemma1b.py`](../training/train_gemma1b.py) | Earlier research-track training script | Training scripts / configs |
 | [`scripts/merge_and_quantize.sh`](./scripts/merge_and_quantize.sh) | Merge → F16 GGUF → Q4_K_M conversion pipeline | Merge / quantization scripts |
