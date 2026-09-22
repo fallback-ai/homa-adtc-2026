@@ -15,7 +15,7 @@ HYPERPARAMETERS:
   Learning Rate:               4e-05
   LR Scheduler:                cosine
   Warmup Ratio:                0.05
-  Effective Batch Size:        32 (per_device_train_batch_size=2, grad_accum=4, 4-way sync)
+  Effective Batch Size:        32 (per_device_train_batch_size=8, grad_accum=4)
   Epochs:                      3
   Total Train Steps:           219
 
