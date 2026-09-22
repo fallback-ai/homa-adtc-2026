@@ -1,5 +1,5 @@
 # Homa - Offline, On-device AI assistant for African Farmers
-> Please find the full technical report in [REPORT.md](./REPORT.md)
+> Please find the updated (Gate 2) technical report in [REPORT.md](./REPORT.md)
 
 ## Running and profiling Homa
 ### Prerequisites
