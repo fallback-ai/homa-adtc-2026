@@ -6,6 +6,10 @@
 - **Primary Submission Model:** [`Homa-Qwen2.5-1.5B`](https://huggingface.co/fallback-ai/Homa-Qwen2.5-1.5B/blob/main/gate2_v1/homa-qwen15b-gate2-q4.gguf) (GGUF Q4_K_M)
 
 ---
+Quick links: 
+- [Gate 2 provenance section](#65-model-provenance-gate-2)
+- [Gate 2 demo video](#9-demo-video-gate-2)
+
 ## 1. Executive Summary & Problem Scope
 
 Smallholder farmers across Nigeria produce the majority of food supplies, yet access to actionable agronomic advice is severely restricted by thin extension-worker coverage and lack of rural internet connectivity. Frontline crop management guides exist predominantly as technical English manuals, inaccessible at the moment of field diagnosis.
@@ -158,6 +162,6 @@ Full 12-test comparison suite covering disease pathology, livestock, safety jail
   4. **Data generation**: ⁠Google Gemini and Claude bulk SFT data generation batched review-and-regenerate passes calibration corpus construction
   5. **Miscellaneous data sources**: ⁠NVRI, ⁠Hugging Face, ⁠Kaggle datasets, ⁠Hugging Face spaces
 
-  ## 9. Demo video
+  ## 9. Demo video (Gate 2)
 
-[![Watch the video](https://img.youtube.com/vi/dcz2VH-HjpU/maxresdefault.jpg)](https://www.youtube.com/watch?v=dcz2VH-HjpU)
+[![Watch the video](https://img.youtube.com/vi/cK3urmFrtMI/maxresdefault.jpg)](https://www.youtube.com/watch?v=cK3urmFrtMI)
