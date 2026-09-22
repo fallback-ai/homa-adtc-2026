@@ -1,15 +1,23 @@
-# Dependencies for the Homa RAG demo app (embedder.py, rag.py, homa_rag.py).
+# Dependencies for the Homa RAG demo app (embedder.py, homa_rag.py).
 # NOTE: these are installed under Python 3.12, not the default `python` (3.14),
 # which has none of them. Run the demo with the 3.12 interpreter, e.g.:
 #     py -3.12 homa_rag.py
-# Pinned to the versions this project was developed and profiled against.
 #
-# Not required by the ADTC profiler / evaluation — the model runs standalone
-# through llama.cpp. This is only for reproducing the local RAG demo.
+# Not required by the ADTC profiler / evaluation -- the submitted model runs
+# standalone through llama.cpp. This is only for reproducing the local RAG demo
+# (the cross-disciplinary pairing described in REPORT.md section 5).
 
-requests==2.34.2
+requests==2.32.3
 chromadb==1.5.9
-fastembed
-onnxruntime
 pymupdf==1.28.0
 python-dotenv==1.2.2
+
+# Embedder (embedder.py): local INT8 ONNX build of Davlan/afro-xlmr-mini.
+# transformers provides AutoTokenizer; optimum[exporters] provides the
+# `optimum-cli export onnx` / `onnxruntime quantize` commands used on first run
+# to build ./afro_mini_onnx and ./afro_mini_onnx_int8; onnxruntime runs the
+# quantized session; numpy does the mean-pooling / normalisation.
+numpy
+onnxruntime
+transformers
+optimum[exporters]

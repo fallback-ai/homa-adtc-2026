@@ -1,0 +1,40 @@
+{
+  "best_eval_loss": 1.55977,
+  "total_train_steps": 219,
+  "epochs": 3,
+  "effective_batch_size": 32,
+  "learning_rate": 4e-05,
+  "lr_scheduler": "cosine",
+  "log_history": [
+    {
+      "step": 50,
+      "training_loss": 1.735216,
+      "validation_loss": 1.671094,
+      "mean_token_accuracy": 0.593706
+    },
+    {
+      "step": 100,
+      "training_loss": 1.547054,
+      "validation_loss": 1.603127,
+      "mean_token_accuracy": 0.607141
+    },
+    {
+      "step": 150,
+      "training_loss": 1.473956,
+      "validation_loss": 1.566739,
+      "mean_token_accuracy": 0.612416
+    },
+    {
+      "step": 200,
+      "training_loss": 1.389875,
+      "validation_loss": 1.560284,
+      "mean_token_accuracy": 0.614197
+    },
+    {
+      "step": 219,
+      "training_loss": 1.389875,
+      "validation_loss": 1.55977,
+      "mean_token_accuracy": 0.614675
+    }
+  ]
+}

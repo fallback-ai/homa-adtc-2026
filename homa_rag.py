@@ -20,7 +20,7 @@ CHROMA_DB_PATH = os.environ.get(
 )
 
 OLLAMA_URL = os.environ.get(
-    "HOMA_OLLAMA_URL", "http://localhost:11434/api/generate"
+    "HOMA_OLLAMA_URL", "http://localhost:11434/api/chat"
 )
 
 LOG_PATH = os.environ.get(
@@ -31,17 +31,16 @@ LOG_PATH = os.environ.get(
 MAX_DISTANCE = 0.85
 TOP_K = 2
 
-# Identity / anti-deflection preamble. raw=True bypasses the Modelfile SYSTEM,
-# so if we want it on this path we must inject it into the prompt ourselves.
-# It is folded into the FIRST user turn (Gemma has no system role). This is a
-# deliberate deviation from the pure trained RAG format; the trained identity
-# signal (heavily up-weighted in the V3 corpus) is the primary defense, this is
-# a runtime nudge on top. Set HOMA_SYSTEM_PROMPT="" to disable and A/B it.
+# Identity / system preamble. This is sent as a real ChatML system message via
+# Ollama's /api/chat endpoint, which matches how the model was fine-tuned
+# (train_qwen15b.py uses a fixed <|im_start|>system turn) and how the Modelfile
+# serves it. Passing an explicit system message here overrides the Modelfile
+# SYSTEM for this path; kept identical to the Modelfile so behaviour matches
+# `ollama run homa`. Set HOMA_SYSTEM_PROMPT="" to fall back to the Modelfile's.
 DEFAULT_SYSTEM = (
     "You are Homa, an offline agricultural assistant for farmers in Nigeria, "
     "built by Fallback AI. You give practical, direct advice on crops, livestock, "
-    "soil, pests, weather, and markets in English, Hausa, Igbo, and Yoruba, "
-    "replying in the language the user uses."
+    "soil, pests, weather, and markets."
 )
 SYSTEM_PROMPT = os.environ.get("HOMA_SYSTEM_PROMPT", DEFAULT_SYSTEM)
 
@@ -84,12 +83,10 @@ def search_rag(question, top_k=TOP_K):
         )
     return scored
 
-# The CURRENT user turn matches the SFT-trained RAG format exactly:
-# "Retrieved Passages: / Passage N: / Question:", nothing else. When there's no
-# retrieved context, it's the plain question (non-RAG training format).
-# Only the current turn carries passages; prior turns are stored as the plain
-# question + answer so multi-turn context stays compact and we don't re-feed
-# stale passages.
+# Retrieved passages are folded into the CURRENT user turn only. When there's no
+# retrieved context, the user turn is the plain question. Prior turns are stored
+# as plain question + answer so multi-turn context stays compact and we don't
+# re-feed stale passages.
 def format_user_content(question, context_docs):
     if context_docs:
         passages = "\n\n".join(
@@ -97,22 +94,22 @@ def format_user_content(question, context_docs):
         )
         return f"Retrieved Passages:\n\n{passages}\n\nQuestion:\n{question}"
     return question
-# Builds the full raw prompt string ourselves (raw=True), so we keep exact
-# control over the turn format while supporting multi-turn history and an
-# optional system preamble folded into the first user turn.
-def build_prompt(question, context_docs, history=None, system=SYSTEM_PROMPT):
-    """Build the RAG prompt for the language model, including retrieved passages."""
-    history = history or []
-    turns = list(history) + [("user", format_user_content(question, context_docs))]
 
-    parts = []
-    for idx, (role, content) in enumerate(turns):
-        if idx == 0 and system:
-            content = f"{system}\n\n{content}"
-        tag = "model" if role == "assistant" else "user"
-        parts.append(f"<start_of_turn>{tag}\n{content}<end_of_turn>\n")
-    parts.append("<start_of_turn>model\n")
-    return "".join(parts)
+
+# Build the ChatML message list for Ollama's /api/chat endpoint. Ollama applies
+# the Modelfile TEMPLATE (ChatML) to these roles, so we no longer hand-build any
+# turn markup ourselves -- the format matches how Qwen2.5 was fine-tuned and
+# packaged. history is a list of ("user"|"assistant", content) tuples.
+def build_messages(question, context_docs, history=None, system=SYSTEM_PROMPT):
+    """Build the chat messages for the language model, including retrieved passages."""
+    history = history or []
+    messages = []
+    if system:
+        messages.append({"role": "system", "content": system})
+    for role, content in history:
+        messages.append({"role": role, "content": content})
+    messages.append({"role": "user", "content": format_user_content(question, context_docs)})
+    return messages
 
 
 def clean_response(answer: str) -> str:
@@ -165,21 +162,19 @@ def ask_homa(question, history=None):
     t0 = time.perf_counter()
     context_docs = search_rag(question)
     t1 = time.perf_counter()
-    prompt = build_prompt(question, context_docs, history=history)
+    messages = build_messages(question, context_docs, history=history)
 
     try:
         response = requests.post(
             OLLAMA_URL,
             json={
                 "model": "homa",
-                "prompt": prompt,
-                "raw": True,
+                "messages": messages,
                 "stream": False,
                 "options": {
                     "temperature": 0.2,
                     "num_predict": 1024,
                     "num_ctx": 4096,
-                    "stop": ["<start_of_turn>", "<end_of_turn>"],
                 },
             },
             timeout=300,
@@ -193,7 +188,7 @@ def ask_homa(question, history=None):
 
     t2 = time.perf_counter()
     try:
-        raw_answer = response.json().get("response", "").strip()
+        raw_answer = response.json().get("message", {}).get("content", "").strip()
     except ValueError:
         error_msg = "[Error] Model server returned an unexpected (non-JSON) response."
         log_turn(question, context_docs, None, error_msg,
