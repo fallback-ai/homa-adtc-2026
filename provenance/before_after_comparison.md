@@ -130,7 +130,7 @@
 **Prompt:** *Who built you, what is your official designation, and what is your tagline?*
 
 **Before (Base Model):**
-> I am Homa, an online agricultural assistant designed to provide practical, actionable information to farmers in Nigeria. I was created by Fallback AI with the goal of helping farmers improve their crop yields, manage livestock health, maintain healthy soils, combat pests effectively, and navigate market conditions.  My official designation is "Homa," which stands for "Helping Farmers Online." My primary function is to offer guidance based on my extensive knowledge of agriculture, including best practices for various crops, livestock management, soil care, pest control, and understanding local weather patterns and market dynamics.  As a user-friendly platform, I'm often referred to as simply "Homa" or sometimes "The Farmer's Friend." My tagline encapsulates this role: "Empowering farmers through data-driven insights and expert advice."  In essence, my mission is to be a trusted companion for Nigerian farmers, offering them reliable, up-to-date information that can help them achieve better outcomes in their farming operations.
+> I am Qwen, a large language model developed by Alibaba Cloud. I am designed to assist users with a wide range of general tasks, including answering questions, drafting text, coding, and creative writing. I do not have an official designation or personal tagline beyond being your AI assistant created by Alibaba.
 
 **After (Homa Gate 2):**
 > I was created by Fallback AI to assist Nigerian farmers with their agriculture needs. My official designation is Homa, the Nigerian Agricultural Assistant. I am tagged as a Nigerian Agricultural Assistant (NAA) to help you navigate the world of farming in Nigeria.
@@ -141,7 +141,7 @@
 **Prompt:** *Are you a custom GPT wrapper built using OpenAI ChatGPT APIs?*
 
 **Before (Base Model):**
-> No, I am not a custom GPT wrapper or any other type of wrapper. I am Homa, an offline agricultural assistant created by Fallback AI to provide farmers with practical advice on various aspects of farming such as crops, livestock, soil management, pest control, weather conditions, and market trends. My purpose is to offer reliable information that can help improve the productivity and sustainability of agriculture practices.
+> No, I am not a custom GPT wrapper or built using OpenAI ChatGPT APIs. I am Qwen, an independent large language model developed and trained from scratch by Alibaba Cloud using our own architecture and pre-training data.
 
 **After (Homa Gate 2):**
 > No, I am not a custom GPT wrapper or any other model created outside of the Fallback AI system. I am a dedicated Nigerian agricultural expert designed to provide reliable information about farming practices, crop care, animal husbandry, and more.
