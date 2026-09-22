@@ -25,9 +25,13 @@ fine-tune (Gate 2: *Proof-of-Training* and *Model Provenance Disclosure*).
 | [`train_sft.py`](./train_sft.py) | Exact standalone SFT training script for Gate 2 release | Training scripts / configs |
 | [`training_log.txt`](./training_log.txt) | Complete step-by-step loss curve and evaluation telemetry | Loss / performance logs |
 | [`dataset_info.md`](./dataset_info.md) | Dataset specifications, source URLs, and cryptographic checksums | Datasets + licensing |
-| [`adapter_model.safetensors`](./adapter_model.safetensors) | Trained LoRA adapter weights (PEFT, bfloat16, 70.48 MB) | Adapter weights |
+| [`adapter_model.safetensors`](./adapter_model.safetensors) | Trained LoRA adapter weights (PEFT, native bfloat16, 70.48 MB) | Adapter weights |
 | [`download_adapter.sh`](./download_adapter.sh) | Standalone fetch script for LoRA adapter weights | Adapter weights backup |
 | [`adapter_config.json`](./adapter_config.json) | PEFT LoRA adapter configuration parameters | Adapter configuration |
+
+> **Note on Adapter Weights & Double Safety Net:**
+> - **Primary (In Repo):** [`adapter_model.safetensors`](./adapter_model.safetensors) is committed directly to the repository in native `bfloat16` format (70.48 MB, matching base model `Qwen2.5-1.5B`'s native precision) for zero-dependency offline access.
+> - **Double Safety Net (FP32 on Hugging Face):** If an evaluator prefers the uncompressed 147.7 MB `float32` copy, it remains publicly hosted on Hugging Face and can be fetched via `bash provenance/download_adapter.sh`. Both formats merge identically into the base model.
 | [`adapters/`](./adapters/README.md) | Detailed adapter architecture, target modules, and verification guide | Adapter documentation |
 | [`logs/`](./logs/README.md) | Structured training loss logs ([`loss_logs.json`](./logs/loss_logs.json)) | Loss / performance logs |
 | [`before_after_comparison.md`](./before_after_comparison.md) | Comprehensive 12-test before/after evaluation suite | Behavioral evidence |

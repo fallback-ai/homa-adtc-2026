@@ -19,13 +19,21 @@ The official configuration is tracked locally in [`adapter_config.json`](./adapt
 
 ---
 
-## Weights Distribution & Checksums
+## Weights Distribution & Formats
 
-Because the full adapter weights span all attention heads and MLP layers ($r=32$), the resulting `.safetensors` binary is **147.7 MB**, exceeding GitHub's standard 100 MB single-file limit. The adapter binary is hosted on Hugging Face with an immutable, pinned direct download link:
+1. **Primary In-Repository Weights (`bfloat16`):**
+   - **Path:** [`../adapter_model.safetensors`](../adapter_model.safetensors)
+   - **Size:** **70.48 MB (73,911,472 bytes)**
+   - **Precision:** Native `bfloat16` (identically matches base model `Qwen/Qwen2.5-1.5B-Instruct`'s native dtype)
+   - **SHA256 Checksum:** `7a73a0b49701faa1614fe1adba4425b8d1d2ef05fc75d403f9f5c6141eba259b`
+   - **Benefit:** Directly committed to GitHub without external download dependencies; merges with zero conversion overhead into base model weights.
 
-- **Download URL:** [`https://huggingface.co/fallback-ai/Homa-Qwen2.5-1.5B/resolve/d5af1a50c7f9c9959bf423071988a8ac36356c80/gate2_v1/adapter/adapter_model.safetensors`](https://huggingface.co/fallback-ai/Homa-Qwen2.5-1.5B/resolve/d5af1a50c7f9c9959bf423071988a8ac36356c80/gate2_v1/adapter/adapter_model.safetensors)
-- **SHA256 Checksum:** `c75fc442877fa91b0c9744ca4224b9bbd92fa165ca99637134fabf5c4d79645e`
-- **Verification:** Tracked in [`../SHA256SUMS.txt`](../SHA256SUMS.txt).
+2. **Double Safety Net — Hosted Full Precision (`float32`):**
+   - **Download Script:** [`../download_adapter.sh`](../download_adapter.sh)
+   - **Download URL:** [`https://huggingface.co/fallback-ai/Homa-Qwen2.5-1.5B/resolve/d5af1a50c7f9c9959bf423071988a8ac36356c80/gate2_v1/adapter/adapter_model.safetensors`](https://huggingface.co/fallback-ai/Homa-Qwen2.5-1.5B/resolve/d5af1a50c7f9c9959bf423071988a8ac36356c80/gate2_v1/adapter/adapter_model.safetensors)
+   - **Size:** 147.7 MB (`float32`)
+   - **SHA256 Checksum:** `c75fc442877fa91b0c9744ca4224b9bbd92fa165ca99637134fabf5c4d79645e`
+   - **Verification:** Both checksums are tracked in [`../SHA256SUMS.txt`](../SHA256SUMS.txt).
 
 ---
 

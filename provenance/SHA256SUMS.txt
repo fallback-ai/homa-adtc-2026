@@ -8,3 +8,4 @@
 
 40e538b85b4a03c14752b852a3f78e840e6100f654c91f0f137e7be63d317d63  model/homa-qwen15b-gate2-q4.gguf
 7a73a0b49701faa1614fe1adba4425b8d1d2ef05fc75d403f9f5c6141eba259b  provenance/adapter_model.safetensors
+c75fc442877fa91b0c9744ca4224b9bbd92fa165ca99637134fabf5c4d79645e  provenance/adapters/adapter_model.safetensors (hosted float32 copy)
