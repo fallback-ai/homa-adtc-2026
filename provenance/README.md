@@ -25,7 +25,8 @@ fine-tune (Gate 2: *Proof-of-Training* and *Model Provenance Disclosure*).
 | [`train_sft.py`](./train_sft.py) | Exact standalone SFT training script for Gate 2 release | Training scripts / configs |
 | [`training_log.txt`](./training_log.txt) | Complete step-by-step loss curve and evaluation telemetry | Loss / performance logs |
 | [`dataset_info.md`](./dataset_info.md) | Dataset specifications, source URLs, and cryptographic checksums | Datasets + licensing |
-| [`download_adapter.sh`](./download_adapter.sh) | Script to fetch LoRA adapter weights (`adapter_model.safetensors`, 147.7 MB) | Adapter weights |
+| [`adapter_model.safetensors`](./adapter_model.safetensors) | Trained LoRA adapter weights (PEFT, bfloat16, 70.48 MB) | Adapter weights |
+| [`download_adapter.sh`](./download_adapter.sh) | Standalone fetch script for LoRA adapter weights | Adapter weights backup |
 | [`adapter_config.json`](./adapter_config.json) | PEFT LoRA adapter configuration parameters | Adapter configuration |
 | [`adapters/`](./adapters/README.md) | Detailed adapter architecture, target modules, and verification guide | Adapter documentation |
 | [`logs/`](./logs/README.md) | Structured training loss logs ([`loss_logs.json`](./logs/loss_logs.json)) | Loss / performance logs |

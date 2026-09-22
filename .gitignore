@@ -2,7 +2,6 @@
 model/*.gguf
 model/*.bin
 model/*.safetensors
-provenance/*.safetensors
 provenance/adapters/*.safetensors
 
 # macOS

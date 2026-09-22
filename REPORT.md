@@ -115,11 +115,11 @@ Full proof-of-training materials live in [`provenance/`](./provenance/). Summary
 | **Base commit SHA** | `d505c65db161245eb65b69ca18db70db545f06e3` |
 | **Fine-tuning method** | LoRA SFT (PEFT) with completion-only loss masking (TRL `DataCollatorForCompletionOnlyLM`) |
 | **LoRA config** | r=32, α=64, dropout=0.05; targets q,k,v,o,gate,up,down projections |
-| **Training script & pipeline** | [`training/train_sft_gate2.py`](./training/train_sft_gate2.py) & [`training/homa-qwen2-5-1-5b-sft-v4.ipynb`](./training/homa-qwen2-5-1-5b-sft-v4.ipynb) |
+| **Training script & pipeline** | [`provenance/train_sft.py`](./provenance/train_sft.py), [`training/train_sft_gate2.py`](./training/train_sft_gate2.py) & [`training/homa-qwen2-5-1-5b-sft-v4.ipynb`](./training/homa-qwen2-5-1-5b-sft-v4.ipynb) |
 | **Training data** | `sft_train_samples/combined_train_v5_clean.jsonl` (2,577 rows, SHA256: `cb81966edce3df73984e992059215a7959957b1be2314923e5b2e83679529f0a`) — sources & licensing in [`provenance/datasets/DATA_LICENSING.md`](./provenance/datasets/DATA_LICENSING.md) |
 | **Merge** | LoRA merged into base on CPU (`merge_and_unload`) |
 | **Quantization** | F16 GGUF → Q4_K_M via llama.cpp ([`provenance/scripts/merge_and_quantize.sh`](./provenance/scripts/merge_and_quantize.sh)) |
-| **Adapter weights** | [`provenance/adapters/`](./provenance/adapters/) (`adapter_config.json` local; safetensors hosted on HF) |
+| **Adapter weights** | [`provenance/adapter_model.safetensors`](./provenance/adapter_model.safetensors) (native bfloat16 PEFT weights included directly in repo; also mirrored on HF) |
 | **Checksums** | [`provenance/SHA256SUMS.txt`](./provenance/SHA256SUMS.txt) (`generate_checksums.py --check`) |
 | **Logs** | [`provenance/logs/loss_logs.json`](./provenance/logs/loss_logs.json) (219 steps, final eval loss 1.5598) |
 
