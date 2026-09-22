@@ -9,7 +9,7 @@ The official configuration is tracked locally in [`adapter_config.json`](./adapt
 | Parameter | Value | Description |
 | :--- | :--- | :--- |
 | **Base Model** | `Qwen/Qwen2.5-1.5B-Instruct` | Base foundation model |
-| **Base Commit SHA** | `d505c65db161245eb65b69ca18db70db545f06e3` | Exact immutable Hugging Face snapshot |
+| **Base Commit SHA** | `989aa7980e4cf806f80c7fef2b1adb7bc71aa306` | Exact immutable Hugging Face snapshot |
 | **PEFT Type** | `LORA` | Parameter-Efficient Fine-Tuning |
 | **LoRA Rank ($r$)** | `32` | Rank dimension for adapter update matrices |
 | **LoRA Alpha ($\alpha$)** | `64` | Scaling factor ($\alpha / r = 2.0$) |
@@ -47,7 +47,7 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 from peft import PeftModel
 
 BASE_MODEL_ID = "Qwen/Qwen2.5-1.5B-Instruct"
-BASE_REVISION = "d505c65db161245eb65b69ca18db70db545f06e3"
+BASE_REVISION = "989aa7980e4cf806f80c7fef2b1adb7bc71aa306"
 ADAPTER_SOURCE = "fallback-ai/Homa-Qwen2.5-1.5B"
 ADAPTER_SUBFOLDER = "gate2_v1/adapter"
 

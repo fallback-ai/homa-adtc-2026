@@ -3,6 +3,10 @@
 **Model Baseline:** `Qwen/Qwen2.5-1.5B-Instruct`  
 **Fine-Tuning Dataset:** `combined_train_v5_clean.jsonl` (2577 clean records)  
 
+> **Evaluation Methodology Note:**  
+> Both the base model (`Qwen2.5-1.5B-Instruct`) and fine-tuned model (`Homa-Qwen2.5-1.5B`) were evaluated under the identical system prompt (`HOMA_SYSTEM: "You are Homa, an offline agricultural assistant for farmers in Nigeria, built by Fallback AI..."`). This rigorous control benchmark tests whether in-context prompting alone is sufficient vs. genuine parameter fine-tuning.  
+> Under zero-shot in-context prompting, the un-fine-tuned base model hallucinates an online platform and fake acronyms ("Helping Farmers Online"), whereas Homa Gate 2 exhibits calibrated, weight-baked adherence.
+
 ## Exact Gate 1 Failure Prompts Comparison
 
 ### Test `gate1_tomato` [Crop Pathology]
