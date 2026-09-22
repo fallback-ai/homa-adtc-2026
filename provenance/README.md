@@ -9,7 +9,7 @@ fine-tune (Gate 2: *Proof-of-Training* and *Model Provenance Disclosure*).
 | Field | Value |
 | --- | --- |
 | Base model | [`Qwen/Qwen2.5-1.5B-Instruct`](https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct) |
-| Base model commit SHA | `d505c65db161245eb65b69ca18db70db545f06e3` |
+| Base model commit SHA | `989aa7980e4cf806f80c7fef2b1adb7bc71aa306` |
 | Fine-tuning method | LoRA SFT (PEFT), completion-only loss masking (TRL) |
 | LoRA config | r=32, α=64, dropout=0.05, target = all linear projections (q,k,v,o,gate,up,down) |
 | Training data | `sft_train_samples/combined_train_v5_clean.jsonl` (2,577 curated Nigerian agronomic Q&A rows, SHA256: `cb81966edce3df73984e992059215a7959957b1be2314923e5b2e83679529f0a`) |

@@ -2,7 +2,7 @@
 HOMA-QWEN2.5-1.5B GATE 2 SFT TRAINING LOG
 ================================================================================
 Base Model:           Qwen/Qwen2.5-1.5B-Instruct
-Base Commit SHA:      d505c65db161245eb65b69ca18db70db545f06e3
+Base Commit SHA:      989aa7980e4cf806f80c7fef2b1adb7bc71aa306
 Fine-Tuning Method:   LoRA SFT (PEFT) with Completion-Only Loss Masking
 Dataset:              sft_train_samples/combined_train_v5_clean.jsonl (2577 rows)
 Dataset SHA256:       cb81966edce3df73984e992059215a7959957b1be2314923e5b2e83679529f0a

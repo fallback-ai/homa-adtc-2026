@@ -112,7 +112,7 @@ Full proof-of-training materials live in [`provenance/`](./provenance/). Summary
 | Field | Value |
 | --- | --- |
 | **Base model** | [`Qwen/Qwen2.5-1.5B-Instruct`](https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct) |
-| **Base commit SHA** | `d505c65db161245eb65b69ca18db70db545f06e3` |
+| **Base commit SHA** | `989aa7980e4cf806f80c7fef2b1adb7bc71aa306` |
 | **Fine-tuning method** | LoRA SFT (PEFT) with completion-only loss masking (TRL `DataCollatorForCompletionOnlyLM`) |
 | **LoRA config** | r=32, α=64, dropout=0.05; targets q,k,v,o,gate,up,down projections |
 | **Training script & pipeline** | [`provenance/train_sft.py`](./provenance/train_sft.py), [`training/train_sft_gate2.py`](./training/train_sft_gate2.py) & [`training/homa-qwen2-5-1-5b-sft-v4.ipynb`](./training/homa-qwen2-5-1-5b-sft-v4.ipynb) |
